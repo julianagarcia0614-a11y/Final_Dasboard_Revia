@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -524,17 +525,17 @@ nav { padding: 20px 0; flex: 1; }
         <div class="kpi-row kpi-4">
           <div class="kpi accent">
             <div class="kpi-label">Inversión Total Ads (USD)</div>
-            <div class="kpi-val gold">$1,508</div>
-            <div class="kpi-sub">Meta Ads · Ene–Abr 2026</div>
+            <div class="kpi-val gold">$1,451</div>
+            <div class="kpi-sub">Meta Ads · Feb–Abr 2026 (Ene sin pauta)</div>
           </div>
           <div class="kpi accent">
             <div class="kpi-label">Conversaciones Generadas</div>
-            <div class="kpi-val">613</div>
+            <div class="kpi-val">612</div>
             <div class="kpi-sub">Leads pagados (WA + Leads Form)</div>
           </div>
           <div class="kpi accent">
             <div class="kpi-label">Costo por Resultado</div>
-            <div class="kpi-val sm">$2.46</div>
+            <div class="kpi-val sm">$2.37</div>
             <div class="kpi-sub">USD promedio · Meta Ads</div>
           </div>
           <div class="kpi accent">
@@ -557,13 +558,13 @@ nav { padding: 20px 0; flex: 1; }
           </div>
           <div class="kpi accent-ok">
             <div class="kpi-label">ROAS Global</div>
-            <div class="kpi-val success">3.98x</div>
-            <div class="kpi-sub">$6,000 revenue / $1,508 inversión</div>
+            <div class="kpi-val success">4.13x</div>
+            <div class="kpi-sub">$6,000 revenue / $1,451 inversión</div>
           </div>
           <div class="kpi">
-            <div class="kpi-label">ROAS Mejor Mes (Mar)</div>
-            <div class="kpi-val sm" style="color:var(--success)">6.38x</div>
-            <div class="kpi-sub">2 convs orgánicas · spend $235</div>
+            <div class="kpi-label">ROAS Mejor Mes (Abr)</div>
+            <div class="kpi-val sm" style="color:var(--success)">5.08x</div>
+            <div class="kpi-sub">4 conversiones · spend $591</div>
           </div>
         </div>
         <div class="kpi-row kpi-4">
@@ -670,24 +671,24 @@ nav { padding: 20px 0; flex: 1; }
         </div>
         <div class="kpi accent-ok">
           <div class="kpi-label">ROAS Acumulado</div>
-          <div class="kpi-val success">3.98x</div>
-          <div class="kpi-sub">$6,000 rev / $1,508 inversión</div>
+          <div class="kpi-val success">4.13x</div>
+          <div class="kpi-sub">$6,000 rev / $1,451 inversión</div>
         </div>
         <div class="kpi">
           <div class="kpi-label">ROAS Feb (2 convs pagadas)</div>
-          <div class="kpi-val sm" style="color:var(--warning)">2.56x</div>
-          <div class="kpi-sub">$1,500 / $585 spend</div>
+          <div class="kpi-val sm" style="color:var(--warning)">3.77x</div>
+          <div class="kpi-sub">$1,500 / $397 spend</div>
         </div>
         <div class="kpi accent-ok">
           <div class="kpi-label">ROAS Mar–Abr (promedio)</div>
-          <div class="kpi-val success">6.28x</div>
-          <div class="kpi-sub">Mar 6.38x · Abr 6.19x</div>
+          <div class="kpi-val success">4.16x</div>
+          <div class="kpi-sub">Mar 3.24x · Abr 5.08x</div>
         </div>
       </div>
 
       <!-- CAMPAIGNS TABLE -->
       <div id="campanas" class="card">
-        <div class="card-title">Detalle por Campaña · Ene–Abr 2026</div>
+        <div class="card-title">Detalle por Campaña · Feb–Abr 2026 (sin inversión en Enero)</div>
         <table class="tbl">
           <thead>
             <tr>
@@ -1220,7 +1221,7 @@ nav { padding: 20px 0; flex: 1; }
             <div class="city-row"><span class="city-name">Tunja / Duitama</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
           </div>
           <div class="insight" style="margin-top:12px;font-size:10.5px">
-            <strong>Oportunidad:</strong> Medellín con 6 leads es señal de demanda nacional. Evaluar si vale la pena una campaña geo-segmentada con mensaje de "vale la pena el viaje" o telemedicina de diagnóstico.
+            <strong>Oportunidad de franquicia:</strong> Medellín con 6 leads, Cali y Bucaramanga con 3 cada una — la demanda llega sola desde otras ciudades sin ninguna pauta local. Esto valida que el modelo de Reviá tiene tracción nacional y es candidato natural para una estrategia de franquicia: replicar el protocolo, la marca y el sistema de setters en otras ciudades sin depender de atender todo desde Bogotá.
           </div>
         </div>
 
@@ -1253,11 +1254,11 @@ nav { padding: 20px 0; flex: 1; }
 // DATA
 // ═══════════════════════════════════════════════════
 const MONTHS_DATA = {
-  all:  { spend: 1508, results: 613, reach: 158070, viewers: 207469, posts: 12, orgViews: 1102, orgReach: 594, convs: 8, revenue: 6000, roas: 3.98, note: 'Acumulado Ene–Abr 2026', convNote: '8 conversiones totales · AOV $750 USD' },
-  ene:  { spend: 204,  results: 92,  reach: 13117,  viewers: 3,      posts: 0,  orgViews: 0,    orgReach: 0,   convs: 0, revenue: 0,    roas: 0,    note: 'Campañas en fase inicial', convNote: 'Sin conversiones documentadas' },
-  feb:  { spend: 585,  results: 130, reach: 66987,  viewers: 44729,  posts: 2,  orgViews: 419,  orgReach: 178, convs: 2, revenue: 1500, roas: 2.56, note: 'Mes de mayor inversión', convNote: '2 conversiones capilar (pagadas)' },
-  mar:  { spend: 235,  results: 93,  reach: 17819,  viewers: 44541,  posts: 3,  orgViews: 416,  orgReach: 240, convs: 2, revenue: 1500, roas: 6.38, note: 'Mayor alcance orgánico relativo', convNote: '2 conversiones orgánicas (no atribuidas a ads)' },
-  abr:  { spend: 485,  results: 298, reach: 60147,  viewers: 118196, posts: 4,  orgViews: 267,  orgReach: 176, convs: 4, revenue: 3000, roas: 6.19, note: 'Pico de viewers. CRM activo', convNote: '4 conversiones capilar (pagadas)' },
+  all:  { spend: 1451, results: 612, reach: 132674, viewers: 207469, posts: 12, orgViews: 1102, orgReach: 594, convs: 8, revenue: 6000, roas: 4.13, note: 'Acumulado Ene–Abr 2026', convNote: '8 conversiones totales · AOV $750 USD' },
+  ene:  { spend: 0,    results: 0,   reach: 0,       viewers: 3,      posts: 0,  orgViews: 0,    orgReach: 0,   convs: 0, revenue: 0,    roas: 0,    note: 'Sin inversión en pauta en Enero', convNote: 'Sin conversiones documentadas' },
+  feb:  { spend: 397,  results: 68,  reach: 44213,  viewers: 44729,  posts: 2,  orgViews: 419,  orgReach: 178, convs: 2, revenue: 1500, roas: 3.77, note: 'Mes de arranque de campañas', convNote: '2 conversiones capilar (pagadas)' },
+  mar:  { spend: 463,  results: 200, reach: 27766,  viewers: 44541,  posts: 3,  orgViews: 416,  orgReach: 240, convs: 2, revenue: 1500, roas: 3.24, note: 'Mes de mayor volumen de resultados', convNote: '2 conversiones capilar' },
+  abr:  { spend: 591,  results: 344, reach: 60695,  viewers: 118196, posts: 4,  orgViews: 267,  orgReach: 176, convs: 4, revenue: 3000, roas: 5.08, note: 'Pico de viewers y conversiones. CRM activo', convNote: '4 conversiones capilar (pagadas)' },
 };
 
 const PERIOD_LABELS = {
@@ -1299,15 +1300,15 @@ const chartMonthly = new Chart(document.getElementById('chartMonthlyAds'), {
       {
         type: 'bar',
         label: 'Inversión USD',
-        data: [204, 585, 235, 485],
-        backgroundColor: [GOLD3, GOLD, MUTED, GOLD2],
+        data: [0, 397, 463, 591],
+        backgroundColor: [MUTED, GOLD3, GOLD, GOLD2],
         borderRadius: 4,
         yAxisID: 'y',
       },
       {
         type: 'line',
         label: 'Resultados',
-        data: [92, 130, 93, 298],
+        data: [0, 68, 200, 344],
         borderColor: BLUE,
         backgroundColor: 'rgba(58,95,122,0.08)',
         pointBackgroundColor: BLUE,
@@ -1369,7 +1370,7 @@ new Chart(document.getElementById('chartROAS'), {
       {
         type: 'line',
         label: 'ROAS',
-        data: [null, 2.56, 6.38, 6.19],
+        data: [null, 3.77, 3.24, 5.08],
         borderColor: GREEN,
         backgroundColor: 'rgba(74,124,89,0.08)',
         pointBackgroundColor: GREEN,
@@ -1585,7 +1586,7 @@ function setMonth(m) {
     document.getElementById('m-note').textContent = d.note;
   }
 
-  const highlights = { all: [GOLD3,GOLD,MUTED,GOLD2], ene: [GOLD2,MUTED,MUTED,MUTED], feb: [MUTED,GOLD2,MUTED,MUTED], mar: [MUTED,MUTED,GOLD2,MUTED], abr: [MUTED,MUTED,MUTED,GOLD2] };
+  const highlights = { all: [MUTED,GOLD3,GOLD,GOLD2], ene: [GOLD2,MUTED,MUTED,MUTED], feb: [MUTED,GOLD2,MUTED,MUTED], mar: [MUTED,MUTED,GOLD2,MUTED], abr: [MUTED,MUTED,MUTED,GOLD2] };
   chartMonthly.data.datasets[0].backgroundColor = highlights[m];
   chartMonthly.update('none');
 }
