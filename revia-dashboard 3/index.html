@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviá by La Font — Dashboard Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --gold:        #8B6A3E;
+  --gold-light:  #C4995A;
+  --gold-pale:   #F0E4CE;
+  --gold-bg:     #FAF5EE;
+  --cream:       #FDFAF6;
+  --white:       #FFFFFF;
+  --dark:        #1C1813;
+  --dark-2:      #2E2820;
+  --text-h:      #1C1813;
+  --text-b:      #3D3428;
+  --text-muted:  #8A7A65;
+  --text-dim:    #B8AA98;
+  --border:      #E8DDD0;
+  --border-gold: #C4995A44;
+  --bg-page:     #F5EFE6;
+  --bg-card:     #FFFFFF;
+  --bg-section:  #FDFAF6;
+  --success:     #4A7C59;
+  --danger:      #9B3A3A;
+  --warning:     #A0622A;
+  --blue:        #3A5F7A;
+  --tag-bg:      #EDE5D8;
+  --shadow:      0 1px 3px rgba(28,24,19,0.07), 0 4px 12px rgba(28,24,19,0.04);
+  --shadow-sm:   0 1px 3px rgba(28,24,19,0.06);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-b);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  font-size: 13.5px;
+}
+
+/* ═══ LAYOUT ═══ */
+.app { display: flex; min-height: 100vh; }
+
+/* ═══ SIDEBAR ═══ */
+.sidebar {
+  width: 210px;
+  min-width: 210px;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logo-area {
+  padding: 28px 22px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.logo-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 5px;
+}
+
+/* Month selector */
+.month-selector {
+  margin: 16px 16px 0;
+}
+
+.month-selector label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.month-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.month-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  font-size: 10.5px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  padding: 7px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.18s;
+  letter-spacing: 0.04em;
+}
+
+.month-btn:hover {
+  background: rgba(196,153,90,0.15);
+  color: var(--gold-light);
+  border-color: rgba(196,153,90,0.3);
+}
+
+.month-btn.active {
+  background: rgba(196,153,90,0.2);
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.month-btn.all-months {
+  grid-column: 1 / -1;
+}
+
+nav { padding: 20px 0; flex: 1; }
+
+.nav-section-label {
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  padding: 0 22px;
+  margin-bottom: 6px;
+  margin-top: 18px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 22px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: all 0.18s;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+
+.nav-item:hover { color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.04); }
+.nav-item.active { color: var(--gold-light); border-left-color: var(--gold-light); background: rgba(196,153,90,0.1); }
+
+.nav-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+.nav-item.active .nav-dot { background: var(--gold-light); }
+
+.sidebar-footer {
+  padding: 16px 22px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.25);
+  line-height: 1.6;
+}
+
+/* ═══ MAIN ═══ */
+.main { flex: 1; overflow-x: hidden; }
+
+.top-bar {
+  padding: 16px 36px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  letter-spacing: 0.02em;
+}
+
+.period-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--tag-bg);
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.content { padding: 32px 36px; }
+
+/* ═══ SECTION ═══ */
+.section { margin-bottom: 44px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.section-rule { flex: 1; height: 1px; background: var(--border); }
+
+.source-tag {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--tag-bg);
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ═══ KPI CARDS ═══ */
+.kpi-row { display: grid; gap: 14px; margin-bottom: 14px; }
+.kpi-4 { grid-template-columns: repeat(4, 1fr); }
+.kpi-3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-5 { grid-template-columns: repeat(5, 1fr); }
+.kpi-2 { grid-template-columns: repeat(2, 1fr); }
+.kpi-6 { grid-template-columns: repeat(3, 1fr); }
+
+.kpi {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.kpi:hover { box-shadow: var(--shadow); border-color: var(--border-gold); }
+
+.kpi-label {
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.kpi-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.kpi-val.gold { color: var(--gold); }
+.kpi-val.sm { font-size: 26px; }
+.kpi-val.danger { color: var(--danger); }
+.kpi-val.success { color: var(--success); }
+
+.kpi-delta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 7px;
+  font-size: 11px;
+}
+.up { color: var(--success); }
+.dn { color: var(--danger); }
+.neutral { color: var(--text-muted); }
+
+.kpi-sub { font-size: 10.5px; color: var(--text-dim); margin-top: 5px; line-height: 1.4; }
+
+/* Accent bar top */
+.kpi.accent { border-top: 3px solid var(--gold-light); }
+.kpi.accent-warn { border-top: 3px solid var(--danger); }
+.kpi.accent-ok { border-top: 3px solid var(--success); }
+
+/* ═══ CHART CARDS ═══ */
+.chart-grid { display: grid; gap: 16px; }
+.cg-2 { grid-template-columns: 1fr 1fr; }
+.cg-21 { grid-template-columns: 2fr 1fr; }
+.cg-12 { grid-template-columns: 1fr 2fr; }
+.cg-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+/* ═══ TABLE ═══ */
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.tbl th {
+  font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-dim); text-align: left; padding: 9px 12px;
+  border-bottom: 1px solid var(--border); font-weight: 500;
+}
+.tbl td { padding: 11px 12px; border-bottom: 1px solid #F0E8DC; color: var(--text-b); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: #FDFAF6; }
+.tbl .num { font-family: 'Syne', sans-serif; font-size: 14px; color: var(--gold); font-weight: 500; }
+.tbl .muted { color: var(--text-dim); font-size: 11px; }
+.tbl .bold { font-weight: 500; color: var(--text-h); }
+
+.pill {
+  display: inline-block; font-size: 8.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 20px; border: 1px solid;
+}
+.pill-active { color: var(--success); border-color: var(--success); background: #EAF3ED; }
+.pill-paused { color: var(--text-dim); border-color: var(--border); background: var(--tag-bg); }
+.pill-warn { color: var(--danger); border-color: var(--danger); background: #F5EAEA; }
+
+/* ═══ GMB CARDS ═══ */
+.gmb-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 16px; }
+
+.gmb-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px 20px; display: flex; align-items: center; gap: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.gmb-icon { font-size: 22px; }
+.gmb-val { font-family: 'Syne', sans-serif; font-size: 26px; color: var(--gold); line-height: 1; font-weight: 600; }
+.gmb-lbl { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; margin-top: 3px; }
+
+/* ═══ FUNNEL ═══ */
+.funnel { display: flex; gap: 0; }
+
+.funnel-step {
+  flex: 1; background: var(--bg-card); border: 1px solid var(--border);
+  border-right: none; padding: 16px 12px; text-align: center; position: relative;
+  transition: background 0.2s;
+}
+.funnel-step:first-child { border-radius: 10px 0 0 10px; }
+.funnel-step:last-child { border-right: 1px solid var(--border); border-radius: 0 10px 10px 0; }
+.funnel-step::after {
+  content: '▸'; position: absolute; right: -10px; top: 50%;
+  transform: translateY(-50%); color: var(--text-dim); font-size: 11px; z-index: 2;
+}
+.funnel-step:last-child::after { display: none; }
+.funnel-step:hover { background: var(--gold-bg); }
+
+.funnel-n { font-family: 'Syne', sans-serif; font-size: 26px; color: var(--gold); line-height: 1; font-weight: 600; }
+.funnel-lbl { font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-top: 5px; line-height: 1.4; }
+.funnel-pct { font-size: 10px; color: var(--success); margin-top: 4px; }
+.funnel-pending { font-size: 9px; color: var(--text-dim); margin-top: 4px; }
+
+/* ═══ FRICCION ═══ */
+.friction-group {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 18px 20px; margin-bottom: 12px; box-shadow: var(--shadow-sm);
+}
+.friction-group-title {
+  font-size: 11px; font-weight: 500; color: var(--text-h);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.friction-count {
+  font-family: 'Syne', sans-serif; font-size: 14px; color: var(--gold);
+  background: var(--gold-pale); padding: 1px 8px; border-radius: 10px; font-weight: 600;
+}
+.friction-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid #F0E8DC; font-size: 12px;
+}
+.friction-row:last-child { border-bottom: none; }
+.friction-bar-wrap { flex: 1; background: #F0E8DC; border-radius: 3px; height: 5px; overflow: hidden; }
+.friction-bar { height: 100%; border-radius: 3px; background: var(--gold-light); }
+.friction-bar.red { background: #C46A6A; }
+.friction-pct { font-size: 10px; color: var(--text-muted); width: 32px; text-align: right; flex-shrink: 0; }
+.friction-emoji { font-size: 13px; width: 18px; flex-shrink: 0; }
+
+/* ═══ TOPIC CARDS ═══ */
+.topic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.topic-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px; box-shadow: var(--shadow-sm);
+}
+.topic-n { font-family: 'Syne', sans-serif; font-size: 30px; color: var(--gold); line-height: 1; font-weight: 600; }
+.topic-lbl { font-size: 11px; color: var(--text-b); margin-top: 4px; font-weight: 400; }
+.topic-pct { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+
+/* ═══ CITY BARS ═══ */
+.city-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; font-size: 12px; }
+.city-name { width: 120px; color: var(--text-b); flex-shrink: 0; }
+.city-bar-wrap { flex: 1; background: #F0E8DC; border-radius: 3px; height: 8px; }
+.city-bar { height: 100%; border-radius: 3px; background: var(--gold-light); }
+.city-val { width: 24px; text-align: right; font-family: 'Syne', sans-serif; font-size: 13px; color: var(--gold); font-weight: 600; flex-shrink: 0; }
+
+/* ═══ INSIGHT BOX ═══ */
+.insight {
+  background: var(--gold-bg); border: 1px solid var(--border-gold);
+  border-left: 3px solid var(--gold-light); border-radius: 8px;
+  padding: 12px 16px; font-size: 11.5px; color: var(--text-b);
+  line-height: 1.65; margin-top: 14px;
+}
+.insight strong { color: var(--gold); font-weight: 500; }
+
+.insight.warn {
+  background: #FDF3F3; border-color: rgba(155,58,58,0.3);
+  border-left-color: var(--danger);
+}
+.insight.warn strong { color: var(--danger); }
+
+/* ═══ DIVIDER ═══ */
+.divider { height: 1px; background: var(--border); margin: 36px 0; }
+
+/* ═══ MONTH-FILTERED CONTENT ═══ */
+.monthly-view { display: none; }
+.monthly-view.active { display: block; }
+.all-view { display: block; }
+.all-view.hidden { display: none; }
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-page); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo-area">
+    <div class="logo-name">reviá</div>
+    <div class="logo-sub">by La Font · Bogotá</div>
+  </div>
+
+  <div class="month-selector">
+    <label>Filtrar por mes</label>
+    <div class="month-btns">
+      <button class="month-btn all-months active" onclick="setMonth('all')">Ene–Abr 2026</button>
+      <button class="month-btn" onclick="setMonth('ene')">Enero</button>
+      <button class="month-btn" onclick="setMonth('feb')">Febrero</button>
+      <button class="month-btn" onclick="setMonth('mar')">Marzo</button>
+      <button class="month-btn" onclick="setMonth('abr')">Abril</button>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-section-label">Resumen</div>
+    <a class="nav-item active" href="#resumen"><span class="nav-dot"></span>KPIs Generales</a>
+
+    <div class="nav-section-label">Paid Media</div>
+    <a class="nav-item" href="#ads"><span class="nav-dot"></span>Meta Ads</a>
+    <a class="nav-item" href="#campanas"><span class="nav-dot"></span>Campañas</a>
+
+    <div class="nav-section-label">Orgánico</div>
+    <a class="nav-item" href="#meta-org"><span class="nav-dot"></span>Meta Orgánico</a>
+    <a class="nav-item" href="#gmb"><span class="nav-dot"></span>Google My Business</a>
+
+    <div class="nav-section-label">CRM · Setter Bot</div>
+    <a class="nav-item" href="#crm-kpis"><span class="nav-dot"></span>Métricas del Bot</a>
+    <a class="nav-item" href="#pipeline"><span class="nav-dot"></span>Pipeline</a>
+    <a class="nav-item" href="#friccion"><span class="nav-dot"></span>Mapa de Fricción</a>
+    <a class="nav-item" href="#temas"><span class="nav-dot"></span>Temas & Ciudades</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    Dashboard Reviá · Capilar<br>
+    Ene – Abr 30, 2026
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="top-bar">
+    <div class="page-title">Dashboard de Rendimiento Digital</div>
+    <div id="period-label" class="period-label">Enero – Abril 2026 · Acumulado</div>
+  </div>
+
+  <div class="content">
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 1 — RESUMEN EJECUTIVO
+    ══════════════════════════════════════════ -->
+    <div id="resumen" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Resumen Ejecutivo</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Acumulado</span>
+      </div>
+
+      <!-- ALL MONTHS -->
+      <div id="resumen-all" class="all-view">
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent">
+            <div class="kpi-label">Inversión Total Ads (USD)</div>
+            <div class="kpi-val gold">$1,508</div>
+            <div class="kpi-sub">Meta Ads · Ene–Abr 2026</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Conversaciones Generadas</div>
+            <div class="kpi-val">613</div>
+            <div class="kpi-sub">Leads pagados (WA + Leads Form)</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Costo por Resultado</div>
+            <div class="kpi-val sm">$2.46</div>
+            <div class="kpi-sub">USD promedio · Meta Ads</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Viewers Únicos Orgánico</div>
+            <div class="kpi-val">207K</div>
+            <div class="kpi-sub">Meta · Crecimiento fuerte en Abr</div>
+          </div>
+        </div>
+        <!-- ROAS ROW -->
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Conversiones Totales (Capilar)</div>
+            <div class="kpi-val success">8</div>
+            <div class="kpi-sub">AOV $750 USD · Feb 2 · Mar 2 · Abr 4</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Revenue Generado (USD)</div>
+            <div class="kpi-val success">$6,000</div>
+            <div class="kpi-sub">8 conversiones × $750 AOV</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">ROAS Global</div>
+            <div class="kpi-val success">3.98x</div>
+            <div class="kpi-sub">$6,000 revenue / $1,508 inversión</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">ROAS Mejor Mes (Mar)</div>
+            <div class="kpi-val sm" style="color:var(--success)">6.38x</div>
+            <div class="kpi-sub">2 convs orgánicas · spend $235</div>
+          </div>
+        </div>
+        <div class="kpi-row kpi-4">
+          <div class="kpi">
+            <div class="kpi-label">Conversaciones CRM (Abr)</div>
+            <div class="kpi-val sm">311</div>
+            <div class="kpi-sub">Contacts únicos atendidos por bot</div>
+          </div>
+          <div class="kpi accent-warn">
+            <div class="kpi-label">Conversión a Cita (Abr)</div>
+            <div class="kpi-val sm danger">5.8%</div>
+            <div class="kpi-sub">22 bookings / 311 convos</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Interacciones GMB</div>
+            <div class="kpi-val sm">136</div>
+            <div class="kpi-sub">Perfil de Negocio · Mar–Abr fuerte</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Solicitudes de Dirección</div>
+            <div class="kpi-val sm">128</div>
+            <div class="kpi-sub">Alto intent de visita física</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PER MONTH RESUMEN -->
+      <div id="resumen-month" class="monthly-view">
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent">
+            <div class="kpi-label">Inversión Ads (USD)</div>
+            <div class="kpi-val gold" id="m-spend">—</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Resultados Pagados</div>
+            <div class="kpi-val" id="m-results">—</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Alcance Pagado</div>
+            <div class="kpi-val sm" id="m-reach">—</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Viewers Orgánicos</div>
+            <div class="kpi-val sm" id="m-viewers">—</div>
+          </div>
+        </div>
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Conversiones Capilar</div>
+            <div class="kpi-val success" id="m-convs">—</div>
+            <div class="kpi-sub" id="m-conv-note">—</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Revenue (AOV $750)</div>
+            <div class="kpi-val success" id="m-revenue">—</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">ROAS del Mes</div>
+            <div class="kpi-val success" id="m-roas">—</div>
+            <div class="kpi-sub" id="m-roas-note">revenue / inversión ads</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Nota del Período</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.5" id="m-note">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 2 — META ADS PAGADO
+    ══════════════════════════════════════════ -->
+    <div id="ads" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Meta Ads — Rendimiento Pagado</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Meta Ads API</span>
+      </div>
+
+      <!-- Monthly trend chart + ROAS + donut -->
+      <div class="chart-grid" style="grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px">
+        <div class="card">
+          <div class="card-title">Inversión Mensual vs. Resultados</div>
+          <div style="height:200px"><canvas id="chartMonthlyAds"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">ROAS & Conversiones por Mes</div>
+          <div style="height:200px"><canvas id="chartROAS"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Distribución de Inversión por Campaña</div>
+          <div style="height:200px"><canvas id="chartSpendDonut"></canvas></div>
+        </div>
+      </div>
+
+      <!-- ROAS Summary strip -->
+      <div class="kpi-row kpi-4" style="margin-bottom:16px">
+        <div class="kpi accent-ok">
+          <div class="kpi-label">Revenue Total (USD)</div>
+          <div class="kpi-val success">$6,000</div>
+          <div class="kpi-sub">8 conversiones × $750 AOV</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">ROAS Acumulado</div>
+          <div class="kpi-val success">3.98x</div>
+          <div class="kpi-sub">$6,000 rev / $1,508 inversión</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">ROAS Feb (2 convs pagadas)</div>
+          <div class="kpi-val sm" style="color:var(--warning)">2.56x</div>
+          <div class="kpi-sub">$1,500 / $585 spend</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">ROAS Mar–Abr (promedio)</div>
+          <div class="kpi-val success">6.28x</div>
+          <div class="kpi-sub">Mar 6.38x · Abr 6.19x</div>
+        </div>
+      </div>
+
+      <!-- CAMPAIGNS TABLE -->
+      <div id="campanas" class="card">
+        <div class="card-title">Detalle por Campaña · Ene–Abr 2026</div>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Campaña</th>
+              <th>Estado</th>
+              <th>Inversión USD</th>
+              <th>Resultados</th>
+              <th>CPR USD</th>
+              <th>Alcance</th>
+              <th>Impresiones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bold">WA · Agent Lead Campaign</td>
+              <td><span class="pill pill-paused">Finalizada</span></td>
+              <td class="num">$611</td><td class="num">276</td><td class="num">$2.21</td>
+              <td class="muted">39,351</td><td class="muted">69,459</td>
+            </tr>
+            <tr>
+              <td class="bold">WA · Agent Lead 4.26</td>
+              <td><span class="pill pill-active">Activa</span></td>
+              <td class="num">$339</td><td class="num">232</td><td class="num">$1.46</td>
+              <td class="muted">30,763</td><td class="muted">60,388</td>
+            </tr>
+            <tr>
+              <td class="bold">Reviá Leads Campaign 8.2.26</td>
+              <td><span class="pill pill-paused">Finalizada</span></td>
+              <td class="num">$249</td><td class="num">35</td><td class="num">$7.12</td>
+              <td class="muted">13,669</td><td class="muted">18,903</td>
+            </tr>
+            <tr>
+              <td class="bold">WA · Native Form 4.26</td>
+              <td><span class="pill pill-active">Activa</span></td>
+              <td class="num">$135</td><td class="num">64</td><td class="num">$2.10</td>
+              <td class="muted">28,844</td><td class="muted">37,744</td>
+            </tr>
+            <tr>
+              <td class="bold">Perspective Lead Campaign</td>
+              <td><span class="pill pill-paused">Finalizada</span></td>
+              <td class="num">$129</td><td class="num">—</td><td class="num">—</td>
+              <td class="muted">39,076</td><td class="muted">58,625</td>
+            </tr>
+            <tr>
+              <td class="bold">Retargeting</td>
+              <td><span class="pill pill-active">Activa</span></td>
+              <td class="num">$11</td><td class="num">2</td><td class="num">$5.64</td>
+              <td class="muted">540</td><td class="muted">877</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 3 — META ORGÁNICO
+    ══════════════════════════════════════════ -->
+    <div id="meta-org" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Meta Orgánico — Facebook</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Facebook Insights</span>
+      </div>
+
+      <div class="kpi-row kpi-4" style="margin-bottom:16px">
+        <div class="kpi accent">
+          <div class="kpi-label">Viewers Únicos Totales</div>
+          <div class="kpi-val gold">207,469</div>
+          <div class="kpi-sub">Ene–Abr 2026 acumulado</div>
+        </div>
+        <div class="kpi accent">
+          <div class="kpi-label">Vistas de Contenido</div>
+          <div class="kpi-val">265.9K</div>
+          <div class="kpi-delta up">▲ 316.4% vs período anterior</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Interacciones · Reels</div>
+          <div class="kpi-val sm">454</div>
+          <div class="kpi-sub">Formato líder en engagement</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Watch Time Total</div>
+          <div class="kpi-val sm">1h 7m</div>
+          <div class="kpi-delta up">▲ 100% vs período anterior</div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2" style="margin-bottom:16px">
+        <div class="card">
+          <div class="card-title">Viewers Únicos por Mes (Orgánico)</div>
+          <div style="height:190px"><canvas id="chartViewersMonth"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Formatos: Publicados vs. Interacciones</div>
+          <div style="height:190px"><canvas id="chartFormats"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Top posts table -->
+      <div class="card">
+        <div class="card-title">Top Posts por Alcance Orgánico</div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Tipo</th><th>Fecha</th><th>Vistas</th><th>Alcance</th><th>Watch time prom.</th><th>Interacc.</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🎬 Reel / Video</td><td class="muted">13 Mar 2026</td>
+              <td class="num">206</td><td class="num">146</td><td class="muted">4.5s</td><td class="num">0</td>
+            </tr>
+            <tr>
+              <td>🎬 Reel / Video</td><td class="muted">25 Abr 2026</td>
+              <td class="num">134</td><td class="num">116</td><td class="muted">3.7s</td><td class="num">0</td>
+            </tr>
+            <tr>
+              <td>🎬 Reel / Video</td><td class="muted">09 Feb 2026</td>
+              <td class="num">134</td><td class="num">73</td><td class="muted">11.3s</td><td class="num">1</td>
+            </tr>
+            <tr>
+              <td>🖼 Foto</td><td class="muted">09 Feb 2026</td>
+              <td class="num">149</td><td class="num">53</td><td class="muted">—</td><td class="num">0</td>
+            </tr>
+            <tr>
+              <td>🖼 Foto</td><td class="muted">10 Feb 2026</td>
+              <td class="num">136</td><td class="num">52</td><td class="muted">—</td><td class="num">0</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="insight">
+          <strong>Nota clave:</strong> El 99.4% de las vistas (264,406) vienen de pauta. Solo 1,491 son orgánicas.
+          Los 207,469 viewers únicos reflejan el alcance combinado impulsado por la actividad publicitaria.
+          El contenido orgánico puro tiene alcance muy limitado aún — oportunidad de mejorar con consistencia de publicación y ganchos más fuertes en los primeros 3 segundos del Reel.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 4 — GOOGLE MY BUSINESS
+    ══════════════════════════════════════════ -->
+    <div id="gmb" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Google My Business</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Nov 2025 – Abr 2026</span>
+      </div>
+
+      <div class="gmb-row">
+        <div class="gmb-card">
+          <div class="gmb-icon">📍</div>
+          <div>
+            <div class="gmb-val">136</div>
+            <div class="gmb-lbl">Interacciones del Perfil</div>
+          </div>
+        </div>
+        <div class="gmb-card">
+          <div class="gmb-icon">🗺</div>
+          <div>
+            <div class="gmb-val">128</div>
+            <div class="gmb-lbl">Solicitudes de Dirección</div>
+          </div>
+        </div>
+        <div class="gmb-card">
+          <div class="gmb-icon">📞</div>
+          <div>
+            <div class="gmb-val">2</div>
+            <div class="gmb-lbl">Llamadas desde Perfil</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2">
+        <div class="card">
+          <div class="card-title">Interacciones del Perfil — Evolución Mensual</div>
+          <div style="height:170px"><canvas id="chartGMBInt"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Solicitudes de Dirección — Evolución</div>
+          <div style="height:170px"><canvas id="chartGMBDir"></canvas></div>
+        </div>
+      </div>
+
+      <div class="insight">
+        <strong>Insight GMB:</strong> El perfil estaba inactivo antes de Feb 2026. El salto a ~68 interacciones/mes en Mar–Abr coincide directamente con el inicio de campañas Meta. La pauta está generando búsquedas directas de marca. Las 128 solicitudes de dirección representan alto intent de visita física — señal positiva para la clínica.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 5 — CRM / BOT SETTER
+    ══════════════════════════════════════════ -->
+    <div id="crm-kpis" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">CRM Setter Bot — Métricas Generales</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Abr 6–30, 2026</span>
+      </div>
+
+      <div class="kpi-row kpi-4">
+        <div class="kpi accent">
+          <div class="kpi-label">Conversaciones Totales</div>
+          <div class="kpi-val gold">311</div>
+          <div class="kpi-sub">= 311 contactos únicos</div>
+        </div>
+        <div class="kpi accent">
+          <div class="kpi-label">Mensajes Totales</div>
+          <div class="kpi-val">3,272</div>
+          <div class="kpi-sub">Promedio: 10.5 msgs/convo</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">Bookings Creados</div>
+          <div class="kpi-val success">22</div>
+          <div class="kpi-sub">Citas agendadas exitosamente</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">Human Takeover</div>
+          <div class="kpi-val sm">8</div>
+          <div class="kpi-sub">2.6% de conversaciones · convos más largas</div>
+        </div>
+      </div>
+
+      <div class="kpi-row kpi-4" style="margin-top:0">
+        <div class="kpi accent-warn">
+          <div class="kpi-label">Conversión a Cita</div>
+          <div class="kpi-val sm danger">5.8%</div>
+          <div class="kpi-sub">22 bookings / 311 convos</div>
+        </div>
+        <div class="kpi accent-warn">
+          <div class="kpi-label">Tasa de Cancelación</div>
+          <div class="kpi-val sm danger">81.8%</div>
+          <div class="kpi-sub">Principal causa: pago expirado (56%)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Msgs Promedio / Convo</div>
+          <div class="kpi-val sm">10.5</div>
+          <div class="kpi-sub">Conversaciones de baja-media profundidad</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Leads Fuera de Bogotá</div>
+          <div class="kpi-val sm">28</div>
+          <div class="kpi-sub">9% de convos · no calificados geo</div>
+        </div>
+      </div>
+
+      <!-- Conversaciones diarias chart -->
+      <div class="card" style="margin-top:16px">
+        <div class="card-title">Conversaciones Diarias — Abr 6–30, 2026</div>
+        <div style="height:190px"><canvas id="chartDailyConvos"></canvas></div>
+        <div class="insight" style="margin-top:14px">
+          <strong>Pico inicial:</strong> Los días Abr 7–8 (27 convos/día) y Abr 13 (28 convos/día) coinciden con mayor inversión en ads. La caída sostenida de Abr 24–27 (5–9 convos) refleja una posible reducción de pauta o agotamiento de audiencia.
+        </div>
+      </div>
+
+      <!-- By hour + by day -->
+      <div class="chart-grid cg-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-title">Conversaciones por Hora (Bogotá)</div>
+          <div style="height:190px"><canvas id="chartByHour"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Conversaciones por Día de Semana</div>
+          <div style="height:190px"><canvas id="chartByDay"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 6 — PIPELINE
+    ══════════════════════════════════════════ -->
+    <div id="pipeline" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Pipeline de Conversión</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">CRM · Abr 2026</span>
+      </div>
+
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-n">613</div>
+          <div class="funnel-lbl">Leads Generados (Ads)</div>
+          <div class="funnel-pct">100%</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-n">311</div>
+          <div class="funnel-lbl">Conversaciones Bot (Abr)</div>
+          <div class="funnel-pct">~51%</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-n">80</div>
+          <div class="funnel-lbl">Nuevos (sin avanzar)</div>
+          <div class="funnel-pct" style="color:var(--warning)">26%</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-n">22</div>
+          <div class="funnel-lbl">Bookings Creados</div>
+          <div class="funnel-pct">7.1%</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-n">4</div>
+          <div class="funnel-lbl">Citas Confirmadas</div>
+          <div class="funnel-pct" style="color:var(--success)">~18% de bookings</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-n">23</div>
+          <div class="funnel-lbl">Perdidos</div>
+          <div class="funnel-pct" style="color:var(--danger)">7.4%</div>
+        </div>
+      </div>
+
+      <div class="insight warn" style="margin-top:16px">
+        <strong>Cuello de botella crítico:</strong> La tasa de cancelación del 81.8% anula gran parte del trabajo de los setters. El 56% de cancelaciones son por <em>payment_expired</em> en Bold — el usuario llega al punto de agendar pero no completa el pago a tiempo. Se recomienda acortar el deadline de pago, enviar recordatorio push a las 2h y ofrecer alternativa de pago en clínica.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 7 — MAPA DE FRICCIÓN
+    ══════════════════════════════════════════ -->
+    <div id="friccion" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Mapa de Fricción por Etapa</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">CRM · Análisis Cualitativo</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <!-- Nuevos -->
+        <div class="friction-group">
+          <div class="friction-group-title">
+            🔵 Nuevos <span class="friction-count">80</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">🤖</span>
+            <span style="flex:1;font-size:11.5px">Auto-msg CTWA sin respuesta</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:26%"></div></div>
+            <span class="friction-pct">26%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">📍</span>
+            <span style="flex:1;font-size:11.5px">Fuera de Bogotá, abandonaron</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:25%"></div></div>
+            <span class="friction-pct">25%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">🙅</span>
+            <span style="flex:1;font-size:11.5px">"No, gracias" después de info</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:13%"></div></div>
+            <span class="friction-pct">13%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">📋</span>
+            <span style="flex:1;font-size:11.5px">Lead Form sin engagement post</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:11%"></div></div>
+            <span class="friction-pct">11%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">🎤</span>
+            <span style="flex:1;font-size:11.5px">Enviaron audio, bot no soporta</span>
+            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:9%"></div></div>
+            <span class="friction-pct">9%</span>
+          </div>
+        </div>
+
+        <!-- Perdidos -->
+        <div class="friction-group">
+          <div class="friction-group-title">
+            🟠 Perdidos <span class="friction-count">23</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">📍</span>
+            <span style="flex:1;font-size:11.5px">Descubrieron que están lejos</span>
+            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:43%"></div></div>
+            <span class="friction-pct">43%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">💬</span>
+            <span style="flex:1;font-size:11.5px">Primer msg del ad y desaparecieron</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:22%"></div></div>
+            <span class="friction-pct">22%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">💰</span>
+            <span style="flex:1;font-size:11.5px">Preguntaron precio y no siguieron</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:22%"></div></div>
+            <span class="friction-pct">22%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">🎤</span>
+            <span style="flex:1;font-size:11.5px">Enviaron audio, no recibieron ayuda</span>
+            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:13%"></div></div>
+            <span class="friction-pct">13%</span>
+          </div>
+        </div>
+
+        <!-- Cancelaciones -->
+        <div class="friction-group">
+          <div class="friction-group-title">
+            🔴 Cancelaciones <span class="friction-count">18</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">⏰</span>
+            <span style="flex:1;font-size:11.5px">Pago expirado — no completaron Bold</span>
+            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:56%"></div></div>
+            <span class="friction-pct">56%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">❓</span>
+            <span style="flex:1;font-size:11.5px">Sin razón documentada</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:28%"></div></div>
+            <span class="friction-pct">28%</span>
+          </div>
+          <div class="friction-row">
+            <span class="friction-emoji">🔄</span>
+            <span style="flex:1;font-size:11.5px">Legacy / orphan del sistema anterior</span>
+            <div class="friction-bar-wrap"><div class="friction-bar" style="width:17%"></div></div>
+            <span class="friction-pct">17%</span>
+          </div>
+          <div class="insight warn" style="margin-top:12px;font-size:10.5px">
+            <strong>Acción urgente:</strong> Reducir deadline de pago Bold o agregar recordatorio automático a las 2h de booking creado.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fricciones clave -->
+      <div class="chart-grid cg-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card-title">Fricciones Transversales del Bot</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
+                <span>🎤 Audio = muerte de conversación (7 de 8 que empezaron con audio abandonaron)</span>
+                <span style="color:var(--danger);font-weight:500">Alta</span>
+              </div>
+              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:88%;background:var(--danger);border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
+                <span>⏰ Pago Bold expirado — 56% de cancelaciones</span>
+                <span style="color:var(--danger);font-weight:500">Alta</span>
+              </div>
+              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:56%;background:var(--danger);border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
+                <span>📍 Geofiltro tardío — 25% preguntan ubicación sin ser cualificados antes</span>
+                <span style="color:var(--warning);font-weight:500">Media</span>
+              </div>
+              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:60%;background:var(--warning);border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
+                <span>📝 Primer mensaje del bot muy largo (200+ chars para alguien que dijo "Hola")</span>
+                <span style="color:var(--warning);font-weight:500">Media</span>
+              </div>
+              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:45%;background:var(--warning);border-radius:3px"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Human Takeovers — Patrones (8 casos)</div>
+          <div style="font-size:12px;color:var(--text-b);line-height:1.8;margin-top:4px">
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              🔄 <strong>Reprogramación de citas</strong> — bot no puede resolverlo fluidamente
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              📋 <strong>Caso de 105 mensajes</strong> — persona preguntando servicios corporales/faciales (no son de Reviá Capilar)
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              👤 <strong>Maria Ortiz</strong> — agendó y luego canceló, requirió seguimiento humano
+            </div>
+            <div style="padding:8px 0">
+              📊 <strong>Convos de 25–105 mensajes</strong> — los human takeover son las convos más largas y complejas
+            </div>
+          </div>
+          <div class="insight" style="margin-top:12px;font-size:10.5px">
+            <strong>Insight:</strong> El 2.6% de human takeover es bajo — el bot maneja bien el volumen. Los casos escalados son genuinamente complejos.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 8 — TEMAS & CIUDADES
+    ══════════════════════════════════════════ -->
+    <div id="temas" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Temas & Ciudades</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">CRM · Clustering Temático</span>
+      </div>
+
+      <div class="topic-grid" style="margin-bottom:20px">
+        <div class="topic-card">
+          <div class="topic-n">110</div>
+          <div class="topic-lbl">Preguntan ubicación</div>
+          <div class="topic-pct">35% de conversaciones</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-n">88</div>
+          <div class="topic-lbl">Preguntan precio</div>
+          <div class="topic-pct">28% de conversaciones</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-n">39</div>
+          <div class="topic-lbl">Describen caída capilar</div>
+          <div class="topic-pct">13% — alta intención</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-n">28</div>
+          <div class="topic-lbl">Fuera de Bogotá</div>
+          <div class="topic-pct">9% — no calificados</div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2">
+        <div class="card">
+          <div class="card-title">Ciudades Mencionadas — Leads Fuera de Bogotá</div>
+          <div style="margin-top:8px">
+            <div class="city-row"><span class="city-name">Otras / lejos</span><div class="city-bar-wrap"><div class="city-bar" style="width:100%"></div></div><span class="city-val">10</span></div>
+            <div class="city-row"><span class="city-name">Medellín</span><div class="city-bar-wrap"><div class="city-bar" style="width:60%"></div></div><span class="city-val">6</span></div>
+            <div class="city-row"><span class="city-name">Bucaramanga</span><div class="city-bar-wrap"><div class="city-bar" style="width:30%"></div></div><span class="city-val">3</span></div>
+            <div class="city-row"><span class="city-name">Cali</span><div class="city-bar-wrap"><div class="city-bar" style="width:30%"></div></div><span class="city-val">3</span></div>
+            <div class="city-row"><span class="city-name">Pasto</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
+            <div class="city-row"><span class="city-name">Popayán</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
+            <div class="city-row"><span class="city-name">Barranquilla</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
+            <div class="city-row"><span class="city-name">Chía</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
+            <div class="city-row"><span class="city-name">Tunja / Duitama</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
+          </div>
+          <div class="insight" style="margin-top:12px;font-size:10.5px">
+            <strong>Oportunidad:</strong> Medellín con 6 leads es señal de demanda nacional. Evaluar si vale la pena una campaña geo-segmentada con mensaje de "vale la pena el viaje" o telemedicina de diagnóstico.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Análisis de Intención — ¿Qué revela el clustering?</div>
+          <div style="font-size:12px;color:var(--text-b);line-height:1.75;margin-top:4px">
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              📍 <strong style="color:var(--text-h)">35% preguntan ubicación primero</strong> — el anuncio atrae curiosos que no saben dónde queda la clínica. Oportunidad: incluir "Bogotá · Edificio La Font · Piso 2" en el copy del ad.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              💰 <strong style="color:var(--text-h)">28% preguntan precio</strong> — sin ancla de precio en el ad, generamos tráfico de baja intención. Considerar agregar rango de precios en la creatividad.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              ✅ <strong style="color:var(--success)">13% describe su problema capilar</strong> — estos son los leads de ALTA calidad. Son los que más probablemente convierten.
+            </div>
+            <div style="padding:8px 0">
+              🌍 <strong style="color:var(--text-h)">6 + 5 = 11 confusión de servicio</strong> — personas buscando servicios corporales/faciales (no capilar) o fuera de Bogotá. El ad necesita más especificidad de servicio.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</main>
+</div><!-- /app -->
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════
+const MONTHS_DATA = {
+  all:  { spend: 1508, results: 613, reach: 158070, viewers: 207469, posts: 12, orgViews: 1102, orgReach: 594, convs: 8, revenue: 6000, roas: 3.98, note: 'Acumulado Ene–Abr 2026', convNote: '8 conversiones totales · AOV $750 USD' },
+  ene:  { spend: 204,  results: 92,  reach: 13117,  viewers: 3,      posts: 0,  orgViews: 0,    orgReach: 0,   convs: 0, revenue: 0,    roas: 0,    note: 'Campañas en fase inicial', convNote: 'Sin conversiones documentadas' },
+  feb:  { spend: 585,  results: 130, reach: 66987,  viewers: 44729,  posts: 2,  orgViews: 419,  orgReach: 178, convs: 2, revenue: 1500, roas: 2.56, note: 'Mes de mayor inversión', convNote: '2 conversiones capilar (pagadas)' },
+  mar:  { spend: 235,  results: 93,  reach: 17819,  viewers: 44541,  posts: 3,  orgViews: 416,  orgReach: 240, convs: 2, revenue: 1500, roas: 6.38, note: 'Mayor alcance orgánico relativo', convNote: '2 conversiones orgánicas (no atribuidas a ads)' },
+  abr:  { spend: 485,  results: 298, reach: 60147,  viewers: 118196, posts: 4,  orgViews: 267,  orgReach: 176, convs: 4, revenue: 3000, roas: 6.19, note: 'Pico de viewers. CRM activo', convNote: '4 conversiones capilar (pagadas)' },
+};
+
+const PERIOD_LABELS = {
+  all: 'Enero – Abril 2026 · Acumulado',
+  ene: 'Enero 2026',
+  feb: 'Febrero 2026',
+  mar: 'Marzo 2026',
+  abr: 'Abril 2026',
+};
+
+let currentMonth = 'all';
+
+// ═══════════════════════════════════════════════════
+// CHART DEFAULTS
+// ═══════════════════════════════════════════════════
+Chart.defaults.color = '#8A7A65';
+Chart.defaults.borderColor = '#E8DDD0';
+Chart.defaults.font.family = "'DM Sans', sans-serif";
+Chart.defaults.font.size = 11;
+
+const GOLD = '#C4995A';
+const GOLD2 = '#8B6A3E';
+const GOLD3 = '#E8D0A8';
+const BLUE = '#3A5F7A';
+const GREEN = '#4A7C59';
+const RED = '#9B3A3A';
+const MUTED = '#D4C9B8';
+
+// ═══════════════════════════════════════════════════
+// CHARTS
+// ═══════════════════════════════════════════════════
+
+// Monthly Ads trend
+const chartMonthly = new Chart(document.getElementById('chartMonthlyAds'), {
+  type: 'bar',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    datasets: [
+      {
+        type: 'bar',
+        label: 'Inversión USD',
+        data: [204, 585, 235, 485],
+        backgroundColor: [GOLD3, GOLD, MUTED, GOLD2],
+        borderRadius: 4,
+        yAxisID: 'y',
+      },
+      {
+        type: 'line',
+        label: 'Resultados',
+        data: [92, 130, 93, 298],
+        borderColor: BLUE,
+        backgroundColor: 'rgba(58,95,122,0.08)',
+        pointBackgroundColor: BLUE,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: false,
+        yAxisID: 'y2',
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { boxWidth: 10, font: { size: 10 } } } },
+    scales: {
+      y: { position: 'left', grid: { color: '#F0E8DC' }, ticks: { callback: v => '$'+v } },
+      y2: { position: 'right', grid: { display: false } }
+    }
+  }
+});
+
+// Spend donut
+new Chart(document.getElementById('chartSpendDonut'), {
+  type: 'doughnut',
+  data: {
+    labels: ['WA Agent (orig)', 'WA Agent 4.26', 'Leads 8.2.26', 'Native Form 4.26', 'Perspective', 'Otros'],
+    datasets: [{
+      data: [611, 339, 249, 135, 129, 45],
+      backgroundColor: [GOLD, '#A07840', '#705430', GOLD2, MUTED, '#C8B89A'],
+      borderWidth: 2,
+      borderColor: '#FFFFFF',
+      hoverOffset: 5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '60%',
+    plugins: {
+      legend: { position: 'right', labels: { boxWidth: 10, padding: 10, font: { size: 10 } } },
+      tooltip: { callbacks: { label: ctx => ` $${ctx.parsed} USD` } }
+    }
+  }
+});
+
+// ROAS by month
+new Chart(document.getElementById('chartROAS'), {
+  type: 'bar',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    datasets: [
+      {
+        type: 'bar',
+        label: 'Conversiones',
+        data: [0, 2, 2, 4],
+        backgroundColor: [MUTED, GOLD3, GOLD3, GOLD],
+        borderRadius: 4,
+        borderWidth: 0,
+        yAxisID: 'y',
+      },
+      {
+        type: 'line',
+        label: 'ROAS',
+        data: [null, 2.56, 6.38, 6.19],
+        borderColor: GREEN,
+        backgroundColor: 'rgba(74,124,89,0.08)',
+        pointBackgroundColor: GREEN,
+        pointRadius: 5,
+        tension: 0.3,
+        fill: false,
+        yAxisID: 'y2',
+        borderWidth: 2,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { boxWidth: 10, font: { size: 10 } } },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.dataset.label === 'ROAS' ? ` ROAS: ${ctx.parsed.y?.toFixed(2)}x` : ` ${ctx.parsed.y} conversiones`
+        }
+      }
+    },
+    scales: {
+      y: { position: 'left', grid: { color: '#F0E8DC' }, ticks: { stepSize: 1 }, title: { display: true, text: 'Conversiones', font: { size: 9 }, color: '#8A7A65' } },
+      y2: { position: 'right', grid: { display: false }, ticks: { callback: v => v + 'x' }, title: { display: true, text: 'ROAS', font: { size: 9 }, color: GREEN }, suggestedMax: 8 }
+    }
+  }
+});
+new Chart(document.getElementById('chartViewersMonth'), {
+  type: 'bar',
+  data: {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    datasets: [{
+      data: [3, 44729, 44541, 118196],
+      backgroundColor: [MUTED, GOLD3, GOLD, GOLD2],
+      borderRadius: 5,
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, ticks: { callback: v => v>=1000 ? (v/1000).toFixed(0)+'K' : v } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// Formats
+new Chart(document.getElementById('chartFormats'), {
+  type: 'bar',
+  data: {
+    labels: ['Reels', 'Stories', 'Fotos'],
+    datasets: [
+      { label: 'Publicadas', data: [9, 17, 3], backgroundColor: MUTED, borderRadius: 3, borderWidth: 0 },
+      { label: 'Interacciones', data: [454, 8, 1], backgroundColor: GOLD, borderRadius: 3, borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { boxWidth: 10, font: { size: 10 } } } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// GMB Interactions
+new Chart(document.getElementById('chartGMBInt'), {
+  type: 'line',
+  data: {
+    labels: ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26'],
+    datasets: [{
+      data: [0, 0, 0, 2, 68, 66],
+      borderColor: GOLD,
+      backgroundColor: 'rgba(196,153,90,0.1)',
+      fill: true, tension: 0.3,
+      pointBackgroundColor: GOLD, pointRadius: 4, borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, beginAtZero: true },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// GMB Directions
+new Chart(document.getElementById('chartGMBDir'), {
+  type: 'line',
+  data: {
+    labels: ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26'],
+    datasets: [{
+      data: [0, 0, 0, 0, 63, 65],
+      borderColor: BLUE,
+      backgroundColor: 'rgba(58,95,122,0.08)',
+      fill: true, tension: 0.3,
+      pointBackgroundColor: BLUE, pointRadius: 4, borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, beginAtZero: true },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// Daily convos (CRM)
+new Chart(document.getElementById('chartDailyConvos'), {
+  type: 'line',
+  data: {
+    labels: ['Abr 6','Abr 7','Abr 8','Abr 9','Abr 10','Abr 11','Abr 12','Abr 13','Abr 14','Abr 15','Abr 16','Abr 17','Abr 18','Abr 19','Abr 20','Abr 21','Abr 22','Abr 23','Abr 24','Abr 25','Abr 26','Abr 27','Abr 28','Abr 29','Abr 30'],
+    datasets: [{
+      data: [1,13,27,18,15,16,16,28,11,16,14,11,14,13,13,13,11,13,5,8,9,9,6,6,10],
+      borderColor: GOLD,
+      backgroundColor: 'rgba(196,153,90,0.1)',
+      fill: true, tension: 0.3,
+      pointBackgroundColor: GOLD, pointRadius: 3, borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, beginAtZero: true, max: 32 },
+      x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } }
+    }
+  }
+});
+
+// By hour
+new Chart(document.getElementById('chartByHour'), {
+  type: 'bar',
+  data: {
+    labels: ['0h','2h','4h','6h','8h','10h','12h','14h','16h','18h','20h','22h'],
+    datasets: [{
+      data: [7,5,3,21,9,14,23,13,14,20,19,17,14],
+      backgroundColor: GOLD3,
+      borderRadius: 3, borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, beginAtZero: true },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+// By day
+new Chart(document.getElementById('chartByDay'), {
+  type: 'bar',
+  data: {
+    labels: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+    datasets: [{
+      data: [38, 51, 43, 63, 41, 35, 38],
+      backgroundColor: [GOLD3,GOLD,GOLD3,GOLD2,GOLD3,MUTED,GOLD3],
+      borderRadius: 4, borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, beginAtZero: true },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// ═══════════════════════════════════════════════════
+// MONTH FILTER
+// ═══════════════════════════════════════════════════
+function fmtNum(n) {
+  if (n === undefined || n === null) return '—';
+  if (n >= 100000) return (n/1000).toFixed(0)+'K';
+  if (n >= 10000) return (n/1000).toFixed(1)+'K';
+  return n.toLocaleString('es-CO');
+}
+
+function setMonth(m) {
+  currentMonth = m;
+  document.querySelectorAll('.month-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[onclick="setMonth('${m}')"]`).classList.add('active');
+
+  document.getElementById('period-label').textContent = PERIOD_LABELS[m];
+
+  const d = MONTHS_DATA[m];
+  const isAll = m === 'all';
+
+  document.getElementById('resumen-all').classList.toggle('hidden', !isAll);
+  document.getElementById('resumen-month').classList.toggle('active', !isAll);
+
+  if (!isAll) {
+    document.getElementById('m-spend').textContent = '$' + fmtNum(d.spend);
+    document.getElementById('m-results').textContent = fmtNum(d.results);
+    document.getElementById('m-reach').textContent = fmtNum(d.reach);
+    document.getElementById('m-viewers').textContent = fmtNum(d.viewers);
+    document.getElementById('m-convs').textContent = d.convs > 0 ? d.convs : '0';
+    document.getElementById('m-conv-note').textContent = d.convNote;
+    document.getElementById('m-revenue').textContent = d.revenue > 0 ? '$' + fmtNum(d.revenue) : '$0';
+    document.getElementById('m-roas').textContent = d.roas > 0 ? d.roas.toFixed(2) + 'x' : 'N/A';
+    document.getElementById('m-roas-note').textContent = d.roas > 0 ? '$' + fmtNum(d.revenue) + ' / $' + fmtNum(d.spend) : 'Sin conversiones este mes';
+    document.getElementById('m-note').textContent = d.note;
+  }
+
+  const highlights = { all: [GOLD3,GOLD,MUTED,GOLD2], ene: [GOLD2,MUTED,MUTED,MUTED], feb: [MUTED,GOLD2,MUTED,MUTED], mar: [MUTED,MUTED,GOLD2,MUTED], abr: [MUTED,MUTED,MUTED,GOLD2] };
+  chartMonthly.data.datasets[0].backgroundColor = highlights[m];
+  chartMonthly.update('none');
+}
+
+// ═══════════════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════════════
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ═══════════════════════════════════════════════════
+// SMOOTH NAV
+// ═══════════════════════════════════════════════════
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    const t = document.querySelector(item.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
