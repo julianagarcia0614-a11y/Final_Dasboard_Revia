@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -467,11 +468,12 @@ nav { padding: 20px 0; flex: 1; }
   <div class="month-selector">
     <label>Filtrar por mes</label>
     <div class="month-btns">
-      <button class="month-btn all-months active" onclick="setMonth('all')">Ene–Abr 2026</button>
+      <button class="month-btn all-months active" onclick="setMonth('all')">Ene–May 2026</button>
       <button class="month-btn" onclick="setMonth('ene')">Enero</button>
       <button class="month-btn" onclick="setMonth('feb')">Febrero</button>
       <button class="month-btn" onclick="setMonth('mar')">Marzo</button>
       <button class="month-btn" onclick="setMonth('abr')">Abril</button>
+      <button class="month-btn" onclick="setMonth('may')">Mayo</button>
     </div>
   </div>
 
@@ -487,16 +489,20 @@ nav { padding: 20px 0; flex: 1; }
     <a class="nav-item" href="#meta-org"><span class="nav-dot"></span>Meta Orgánico</a>
     <a class="nav-item" href="#gmb"><span class="nav-dot"></span>Google My Business</a>
 
+    <div class="nav-section-label">YouTube</div>
+    <a class="nav-item" href="#youtube"><span class="nav-dot"></span>YouTube · Orgánico</a>
+
+    <div class="nav-section-label">Linktree</div>
+    <a class="nav-item" href="#linktree"><span class="nav-dot"></span>Linktree · Bio Link</a>
+
     <div class="nav-section-label">CRM · Setter Bot</div>
     <a class="nav-item" href="#crm-kpis"><span class="nav-dot"></span>Métricas del Bot</a>
     <a class="nav-item" href="#pipeline"><span class="nav-dot"></span>Pipeline</a>
-    <a class="nav-item" href="#friccion"><span class="nav-dot"></span>Mapa de Fricción</a>
-    <a class="nav-item" href="#temas"><span class="nav-dot"></span>Temas & Ciudades</a>
   </nav>
 
   <div class="sidebar-footer">
     Dashboard Reviá · Capilar<br>
-    Ene – Abr 30, 2026
+    Ene – May 31, 2026
   </div>
 </aside>
 
@@ -504,7 +510,7 @@ nav { padding: 20px 0; flex: 1; }
 <main class="main">
   <div class="top-bar">
     <div class="page-title">Dashboard de Rendimiento Digital</div>
-    <div id="period-label" class="period-label">Enero – Abril 2026 · Acumulado</div>
+    <div id="period-label" class="period-label">Enero – Mayo 2026 · Acumulado</div>
   </div>
 
   <div class="content">
@@ -524,73 +530,73 @@ nav { padding: 20px 0; flex: 1; }
         <div class="kpi-row kpi-4">
           <div class="kpi accent">
             <div class="kpi-label">Inversión Total Ads (USD)</div>
-            <div class="kpi-val gold">$1,451</div>
-            <div class="kpi-sub">Meta Ads · Feb–Abr 2026 (Ene sin pauta)</div>
+            <div class="kpi-val gold">$2,151</div>
+            <div class="kpi-sub">Meta Ads · Feb–May 2026 (Ene sin pauta)</div>
           </div>
           <div class="kpi accent">
             <div class="kpi-label">Conversaciones Generadas</div>
-            <div class="kpi-val">612</div>
+            <div class="kpi-val">914</div>
             <div class="kpi-sub">Leads pagados (WA + Leads Form)</div>
           </div>
           <div class="kpi accent">
             <div class="kpi-label">Costo por Resultado</div>
-            <div class="kpi-val sm">$2.37</div>
+            <div class="kpi-val sm">$2.35</div>
             <div class="kpi-sub">USD promedio · Meta Ads</div>
           </div>
           <div class="kpi accent">
-            <div class="kpi-label">Viewers Únicos Orgánico</div>
-            <div class="kpi-val">207K</div>
-            <div class="kpi-sub">Meta · Crecimiento fuerte en Abr</div>
+            <div class="kpi-label">Views / Viewers Orgánico</div>
+            <div class="kpi-val">475K</div>
+            <div class="kpi-sub">Facebook Ene–Abr + Instagram May</div>
           </div>
         </div>
-        <!-- ROAS ROW -->
+        <!-- CONSULTAS ROW -->
         <div class="kpi-row kpi-4">
           <div class="kpi accent-ok">
-            <div class="kpi-label">Conversiones Totales (Capilar)</div>
-            <div class="kpi-val success">8</div>
-            <div class="kpi-sub">AOV $750 USD · Feb 2 · Mar 2 · Abr 4</div>
-          </div>
-          <div class="kpi accent-ok">
-            <div class="kpi-label">Revenue Generado (USD)</div>
-            <div class="kpi-val success">$6,000</div>
-            <div class="kpi-sub">8 conversiones × $750 AOV</div>
-          </div>
-          <div class="kpi accent-ok">
-            <div class="kpi-label">ROAS Global</div>
-            <div class="kpi-val success">4.13x</div>
-            <div class="kpi-sub">$6,000 revenue / $1,451 inversión</div>
+            <div class="kpi-label">Consultas Pagas Confirmadas (May)</div>
+            <div class="kpi-val success">9</div>
+            <div class="kpi-sub">Asistieron o tienen cita programada</div>
           </div>
           <div class="kpi">
-            <div class="kpi-label">ROAS Mejor Mes (Abr)</div>
-            <div class="kpi-val sm" style="color:var(--success)">5.08x</div>
-            <div class="kpi-sub">4 conversiones · spend $591</div>
+            <div class="kpi-label">Estado de Pacientes Mayo</div>
+            <div class="kpi-val sm" style="font-size:14px;color:var(--warning)">En diagnóstico</div>
+            <div class="kpi-sub">Mayoría requiere exámenes previos al procedimiento</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Conversión a Cita (May)</div>
+            <div class="kpi-val sm success">14.1%</div>
+            <div class="kpi-sub">▲ vs 5.8% Abr · 28 bookings / 199 convos</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Conversaciones CRM (May)</div>
+            <div class="kpi-val sm">199</div>
+            <div class="kpi-sub">28 bookings · 9 citas confirmadas</div>
           </div>
         </div>
         <div class="kpi-row kpi-4">
-          <div class="kpi">
-            <div class="kpi-label">Conversaciones CRM (Abr)</div>
-            <div class="kpi-val sm">311</div>
-            <div class="kpi-sub">Contacts únicos atendidos por bot</div>
-          </div>
-          <div class="kpi accent-warn">
-            <div class="kpi-label">Conversión a Cita (Abr)</div>
-            <div class="kpi-val sm danger">5.8%</div>
-            <div class="kpi-sub">22 bookings / 311 convos</div>
+          <div class="kpi accent">
+            <div class="kpi-label">Pauta Lead Gen (Native + WA)</div>
+            <div class="kpi-val sm gold">$448</div>
+            <div class="kpi-sub">214 leads · CPR $2.09 · Formulario + WA directo</div>
           </div>
           <div class="kpi">
-            <div class="kpi-label">Interacciones GMB</div>
-            <div class="kpi-val sm">136</div>
-            <div class="kpi-sub">Perfil de Negocio · Mar–Abr fuerte</div>
+            <div class="kpi-label">Pauta Engagement (Promo May)</div>
+            <div class="kpi-val sm">$252</div>
+            <div class="kpi-sub">88 convos · CPR $2.86 · Madres + Test Epigenético</div>
           </div>
           <div class="kpi">
-            <div class="kpi-label">Solicitudes de Dirección</div>
-            <div class="kpi-val sm">128</div>
-            <div class="kpi-sub">Alto intent de visita física</div>
+            <div class="kpi-label">Vistas GMB (May)</div>
+            <div class="kpi-val sm">74</div>
+            <div class="kpi-sub">Perfil Negocio · 65% desde móvil</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Linktree Click Rate (May)</div>
+            <div class="kpi-val sm">91.5%</div>
+            <div class="kpi-sub">97 clicks · Tonif. Corporal lidera (32)</div>
           </div>
         </div>
       </div>
 
-      <!-- PER MONTH RESUMEN -->
+      <!-- PER MONTH RESUMEN — Ene/Feb/Mar/Abr -->
       <div id="resumen-month" class="monthly-view">
         <div class="kpi-row kpi-4">
           <div class="kpi accent">
@@ -631,6 +637,79 @@ nav { padding: 20px 0; flex: 1; }
           </div>
         </div>
       </div>
+
+      <!-- MAYO RESUMEN ESPECIAL -->
+      <div id="resumen-may" class="monthly-view">
+        <!-- Fila 1 — Pauta Mayo -->
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent">
+            <div class="kpi-label">Inversión Total Ads (USD)</div>
+            <div class="kpi-val gold">$700</div>
+            <div class="kpi-sub">Meta Ads · Mayo 2026 · mayor mes</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Resultados Totales (May)</div>
+            <div class="kpi-val">302</div>
+            <div class="kpi-sub">156 leads form + 58 convos WA + 88 convos promo</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Costo por Resultado</div>
+            <div class="kpi-val sm">$2.32</div>
+            <div class="kpi-sub">USD promedio · Meta Ads Mayo</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Views Orgánico (Instagram)</div>
+            <div class="kpi-val sm">267K</div>
+            <div class="kpi-sub">629 nuevos seguidores · 3,728 link clicks</div>
+          </div>
+        </div>
+        <!-- Fila 2 — CRM Mayo -->
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Consultas Pagas Confirmadas</div>
+            <div class="kpi-val success">9</div>
+            <div class="kpi-sub">Asistieron o tienen cita programada</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Estado de Pacientes</div>
+            <div class="kpi-val sm" style="font-size:14px;color:var(--warning)">En diagnóstico</div>
+            <div class="kpi-sub">Mayoría requiere exámenes previos al procedimiento</div>
+          </div>
+          <div class="kpi accent-ok">
+            <div class="kpi-label">Conversión a Cita</div>
+            <div class="kpi-val sm success">14.1%</div>
+            <div class="kpi-sub">▲ vs 5.8% Abr · 28 bookings / 199 convos</div>
+          </div>
+          <div class="kpi accent">
+            <div class="kpi-label">Conversaciones CRM</div>
+            <div class="kpi-val">199</div>
+            <div class="kpi-sub">28 bookings · 9 citas confirmadas</div>
+          </div>
+        </div>
+        <!-- Fila 3 — Desglose pauta + canales -->
+        <div class="kpi-row kpi-4">
+          <div class="kpi accent">
+            <div class="kpi-label">Pauta Lead Gen (Native + WA)</div>
+            <div class="kpi-val sm gold">$448</div>
+            <div class="kpi-sub">214 leads · CPR $2.09 · Formulario + WA directo</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Pauta Engagement (Promo May)</div>
+            <div class="kpi-val sm">$252</div>
+            <div class="kpi-sub">88 convos · CPR $2.86 · Madres + Test Epigenético</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Vistas GMB</div>
+            <div class="kpi-val sm">74</div>
+            <div class="kpi-sub">65% desde móvil · ▲ sostenido</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Linktree Click Rate</div>
+            <div class="kpi-val sm">91.5%</div>
+            <div class="kpi-sub">97 clicks · Tonif. Corporal lidera (32)</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -661,84 +740,73 @@ nav { padding: 20px 0; flex: 1; }
         </div>
       </div>
 
-      <!-- ROAS Summary strip -->
+      <!-- Spend split strip -->
       <div class="kpi-row kpi-4" style="margin-bottom:16px">
-        <div class="kpi accent-ok">
-          <div class="kpi-label">Revenue Total (USD)</div>
-          <div class="kpi-val success">$6,000</div>
-          <div class="kpi-sub">8 conversiones × $750 AOV</div>
-        </div>
-        <div class="kpi accent-ok">
-          <div class="kpi-label">ROAS Acumulado</div>
-          <div class="kpi-val success">4.13x</div>
-          <div class="kpi-sub">$6,000 rev / $1,451 inversión</div>
+        <div class="kpi accent">
+          <div class="kpi-label">Lead Gen · Native Form + WA (May)</div>
+          <div class="kpi-val sm gold">$448</div>
+          <div class="kpi-sub">156 leads form · 58 WA convos · CPR $2.09</div>
         </div>
         <div class="kpi">
-          <div class="kpi-label">ROAS Feb (2 convs pagadas)</div>
-          <div class="kpi-val sm" style="color:var(--warning)">3.77x</div>
-          <div class="kpi-sub">$1,500 / $397 spend</div>
+          <div class="kpi-label">Engagement · Promo Madres + Test Epig.</div>
+          <div class="kpi-val sm">$252</div>
+          <div class="kpi-sub">88 messaging convos · CPR $2.86 · 1 campaña</div>
         </div>
         <div class="kpi accent-ok">
-          <div class="kpi-label">ROAS Mar–Abr (promedio)</div>
-          <div class="kpi-val success">4.16x</div>
-          <div class="kpi-sub">Mar 3.24x · Abr 5.08x</div>
+          <div class="kpi-label">Consultas Pagas Confirmadas</div>
+          <div class="kpi-val success">9</div>
+          <div class="kpi-sub">Asistieron o tienen cita · mayoría en diagnóstico</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Mejor Ad Set (May)</div>
+          <div class="kpi-val sm">Male WA</div>
+          <div class="kpi-sub">87 leads · CPR $2.23 · $193 spend</div>
         </div>
       </div>
 
       <!-- CAMPAIGNS TABLE -->
       <div id="campanas" class="card">
-        <div class="card-title">Detalle por Campaña · Feb–Abr 2026 (sin inversión en Enero)</div>
+        <div class="card-title">Detalle por Campaña · Mayo 2026</div>
         <table class="tbl">
           <thead>
             <tr>
               <th>Campaña</th>
+              <th>Tipo</th>
               <th>Estado</th>
               <th>Inversión USD</th>
               <th>Resultados</th>
               <th>CPR USD</th>
               <th>Alcance</th>
-              <th>Impresiones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="bold">WA · Agent Lead Campaign</td>
-              <td><span class="pill pill-paused">Finalizada</span></td>
-              <td class="num">$611</td><td class="num">276</td><td class="num">$2.21</td>
-              <td class="muted">39,351</td><td class="muted">69,459</td>
-            </tr>
-            <tr>
-              <td class="bold">WA · Agent Lead 4.26</td>
-              <td><span class="pill pill-active">Activa</span></td>
-              <td class="num">$339</td><td class="num">232</td><td class="num">$1.46</td>
-              <td class="muted">30,763</td><td class="muted">60,388</td>
-            </tr>
-            <tr>
-              <td class="bold">Reviá Leads Campaign 8.2.26</td>
-              <td><span class="pill pill-paused">Finalizada</span></td>
-              <td class="num">$249</td><td class="num">35</td><td class="num">$7.12</td>
-              <td class="muted">13,669</td><td class="muted">18,903</td>
-            </tr>
-            <tr>
+            <tr style="background:#F5EFE6">
               <td class="bold">WA · Native Form 4.26</td>
+              <td><span class="pill pill-active">Lead Gen</span></td>
               <td><span class="pill pill-active">Activa</span></td>
-              <td class="num">$135</td><td class="num">64</td><td class="num">$2.10</td>
-              <td class="muted">28,844</td><td class="muted">37,744</td>
+              <td class="num">$335</td><td class="num">156 leads</td><td class="num">$2.15</td>
+              <td class="muted">59,485</td>
+            </tr>
+            <tr style="background:#F5EFE6">
+              <td class="bold">WA · Agent Lead 4.26</td>
+              <td><span class="pill pill-active">Lead Gen</span></td>
+              <td><span class="pill pill-active">Activa</span></td>
+              <td class="num">$114</td><td class="num">58 convos WA</td><td class="num">$1.96</td>
+              <td class="muted">4,450</td>
             </tr>
             <tr>
-              <td class="bold">Perspective Lead Campaign</td>
+              <td class="bold">Promo Madres + Test Epigenético</td>
+              <td><span class="pill" style="color:var(--blue);border-color:var(--blue);background:#EAF0F5">Engagement</span></td>
               <td><span class="pill pill-paused">Finalizada</span></td>
-              <td class="num">$129</td><td class="num">—</td><td class="num">—</td>
-              <td class="muted">39,076</td><td class="muted">58,625</td>
-            </tr>
-            <tr>
-              <td class="bold">Retargeting</td>
-              <td><span class="pill pill-active">Activa</span></td>
-              <td class="num">$11</td><td class="num">2</td><td class="num">$5.64</td>
-              <td class="muted">540</td><td class="muted">877</td>
+              <td class="num">$252</td><td class="num">88 convos</td><td class="num">$2.86</td>
+              <td class="muted">6,009</td>
             </tr>
           </tbody>
         </table>
+        <div style="display:flex;gap:16px;margin-top:10px;font-size:11px;color:var(--text-muted)">
+          <span style="background:#F5EFE6;padding:4px 10px;border-radius:4px">🎯 Lead Gen total: <strong>$448</strong> · 214 resultados · CPR $2.09</span>
+          <span style="background:#EAF0F5;padding:4px 10px;border-radius:4px">💬 Engagement total: <strong>$252</strong> · 88 convos · CPR $2.86</span>
+        </div>
       </div>
     </div>
 
@@ -749,21 +817,21 @@ nav { padding: 20px 0; flex: 1; }
     ══════════════════════════════════════════ -->
     <div id="meta-org" class="section reveal">
       <div class="section-header">
-        <h2 class="section-title">Meta Orgánico — Facebook</h2>
+        <h2 class="section-title">Meta Orgánico — Facebook & Instagram</h2>
         <div class="section-rule"></div>
-        <span class="source-tag">Facebook Insights</span>
+        <span class="source-tag">Meta Insights</span>
       </div>
 
       <div class="kpi-row kpi-4" style="margin-bottom:16px">
         <div class="kpi accent">
-          <div class="kpi-label">Viewers Únicos Totales</div>
+          <div class="kpi-label">Views Facebook (Ene–Abr)</div>
           <div class="kpi-val gold">207,469</div>
-          <div class="kpi-sub">Ene–Abr 2026 acumulado</div>
+          <div class="kpi-sub">Alcance combinado pauta + orgánico</div>
         </div>
-        <div class="kpi accent">
-          <div class="kpi-label">Vistas de Contenido</div>
-          <div class="kpi-val">265.9K</div>
-          <div class="kpi-delta up">▲ 316.4% vs período anterior</div>
+        <div class="kpi accent" style="border-top-color:#C46A6A">
+          <div class="kpi-label">Instagram Views (Mayo)</div>
+          <div class="kpi-val" style="color:#9B3A3A">267K</div>
+          <div class="kpi-delta up">▲ 629 nuevos seguidores · 3,728 link clicks</div>
         </div>
         <div class="kpi">
           <div class="kpi-label">Interacciones · Reels</div>
@@ -779,7 +847,7 @@ nav { padding: 20px 0; flex: 1; }
 
       <div class="chart-grid cg-2" style="margin-bottom:16px">
         <div class="card">
-          <div class="card-title">Viewers Únicos por Mes (Orgánico)</div>
+          <div class="card-title">Views por Mes · Facebook Ene–Abr / Instagram May</div>
           <div style="height:190px"><canvas id="chartViewersMonth"></canvas></div>
         </div>
         <div class="card">
@@ -816,12 +884,160 @@ nav { padding: 20px 0; flex: 1; }
               <td>🖼 Foto</td><td class="muted">10 Feb 2026</td>
               <td class="num">136</td><td class="num">52</td><td class="muted">—</td><td class="num">0</td>
             </tr>
+            <tr style="background:#FAF5EE">
+              <td>🎬 Reel / Video</td><td class="muted" style="color:var(--gold)">May 2026</td>
+              <td class="num" style="color:var(--gold)">267K</td><td class="num" style="color:var(--gold)">200K</td><td class="muted">—</td><td class="num" style="color:var(--gold)">1,590</td>
+            </tr>
           </tbody>
         </table>
         <div class="insight">
           <strong>Nota clave:</strong> El 99.4% de las vistas (264,406) vienen de pauta. Solo 1,491 son orgánicas.
           Los 207,469 viewers únicos reflejan el alcance combinado impulsado por la actividad publicitaria.
           El contenido orgánico puro tiene alcance muy limitado aún — oportunidad de mejorar con consistencia de publicación y ganchos más fuertes en los primeros 3 segundos del Reel.
+        </div>
+        <div class="insight" style="margin-top:10px;border-left-color:#C46A6A;background:#FDF3F3;">
+          <strong style="color:#9B3A3A">📱 Instagram May 2026 (nuevo):</strong> 267,468 views · 200,058 alcance · <strong style="color:#9B3A3A">629 nuevos seguidores</strong> · 1,590 interacciones · 3,728 link clicks → Linktree (91.5% click rate).
+          Ver sección Linktree para detalle completo por enlace.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 3C — YOUTUBE
+    ══════════════════════════════════════════ -->
+    <div id="youtube" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">YouTube — Canal Orgánico</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">YouTube Studio · Abr–May 2026</span>
+      </div>
+
+      <div class="kpi-row kpi-4" style="margin-bottom:16px">
+        <div class="kpi accent">
+          <div class="kpi-label">Vistas Abril</div>
+          <div class="kpi-val gold">751</div>
+          <div class="kpi-sub">5 videos activos · pico "Sin Cirugías" (394)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Vistas Mayo</div>
+          <div class="kpi-val sm">237</div>
+          <div class="kpi-sub">2 videos nuevos · "Caída cabello" (147)</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">Audiencia · Watch Time</div>
+          <div class="kpi-val sm success">59.3%</div>
+          <div class="kpi-sub">Femenino · Masculino: 40.7%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Grupo Dominante (Vistas)</div>
+          <div class="kpi-val sm">25–34</div>
+          <div class="kpi-sub">28.6% del total · Hombre 19.3% · Mujer 9.3%</div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2" style="margin-bottom:16px">
+        <div class="card">
+          <div class="card-title">Vistas por Video — Abril 2026 (751 total)</div>
+          <div style="height:210px"><canvas id="chartYTAbril"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Vistas por Video — Mayo 2026 (237 total)</div>
+          <div style="height:210px"><canvas id="chartYTMayo"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2">
+        <div class="card">
+          <div class="card-title">Audiencia por Edad y Género (YouTube · Vistas)</div>
+          <div style="height:200px"><canvas id="chartYTAudiencia"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Insights del Canal</div>
+          <div style="font-size:12px;color:var(--text-b);line-height:1.8;margin-top:6px">
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              🎬 <strong style="color:var(--text-h)">"Realza tu belleza SIN CIRUGÍAS"</strong> — mejor video de abril con 394 vistas. Pico atípico el 16 Abr (317 en un día). Temática de estética no-capilar que confirma la demanda lateral.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              🧬 <strong style="color:var(--text-h)">"Exosomas" (228 vistas Abr)</strong> — segundo mejor. Los videos educativos de tratamiento capturan bien.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              📉 <strong style="color:var(--warning)">Cada video pica el día de publicación y cae a ~0</strong> — el canal no tiene audiencia recurrente todavía. El SEO orgánico de YouTube necesita más tiempo o volumen de publicación.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              👩 <strong style="color:var(--success)">Mujer 45–54 consume el 19.8% del watch time</strong> — audiencia de alto valor (mayor poder adquisitivo). Los ads deberían apuntar más a este segmento.
+            </div>
+            <div style="padding:8px 0">
+              👨 <strong style="color:var(--text-h)">Hombre 25–34 representa el 19.3% de vistas</strong> — audiencia masculina joven activa en YouTube. Oportunidad para contenido dirigido a hombres con entradas/alopecia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 3B — LINKTREE
+    ══════════════════════════════════════════ -->
+    <div id="linktree" class="section reveal">
+      <div class="section-header">
+        <h2 class="section-title">Linktree — Bio Link Performance</h2>
+        <div class="section-rule"></div>
+        <span class="source-tag">Linktree · Mayo 2026</span>
+      </div>
+
+      <div class="kpi-row kpi-4" style="margin-bottom:16px">
+        <div class="kpi accent">
+          <div class="kpi-label">Clicks Totales (Mayo)</div>
+          <div class="kpi-val gold">97</div>
+          <div class="kpi-sub">Desde Instagram bio + links directos</div>
+        </div>
+        <div class="kpi accent-ok">
+          <div class="kpi-label">Click Rate Promedio</div>
+          <div class="kpi-val success">91.5%</div>
+          <div class="kpi-sub">De visitas al perfil → 91.5% clickean algo</div>
+        </div>
+        <div class="kpi accent-warn">
+          <div class="kpi-label">Link Más Clickeado</div>
+          <div class="kpi-val sm" style="color:var(--warning)">Tonif. Corporal</div>
+          <div class="kpi-sub">32 clicks — supera a Tratamientos Capilares</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Link Capilar Principal</div>
+          <div class="kpi-val sm">18</div>
+          <div class="kpi-sub">Tratamientos Capilares · 2° lugar</div>
+        </div>
+      </div>
+
+      <div class="chart-grid cg-2" style="margin-bottom:16px">
+        <div class="card">
+          <div class="card-title">Clicks por Link — Mayo 2026</div>
+          <div style="height:220px"><canvas id="chartLinktree"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Intención Revelada por Linktree</div>
+          <div style="font-size:12px;color:var(--text-b);line-height:1.8;margin-top:6px">
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              🏆 <strong style="color:var(--warning)">Tonificación Corporal: 32 clicks (33%)</strong> — la demanda de estética corporal es real y consistente. Confirma lo que el CRM ya mostraba: 9 convos sobre estética corporal en mayo.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              💇 <strong style="color:var(--text-h)">Tratamientos Capilares: 18 clicks</strong> — el servicio core está en 2° lugar. La diferencia vs Tonificación es una señal clara de diversificación de demanda.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              📅 <strong style="color:var(--text-h)">Reservar Valoración Inicial: 16 clicks</strong> — alta intención de compra directa desde el bio link.
+            </div>
+            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
+              💆 <strong style="color:var(--text-h)">Rejuvenecimiento Facial: 11 clicks</strong> — tercer servicio más buscado. Oportunidad latente.
+            </div>
+            <div style="padding:8px 0">
+              🧬 <strong style="color:var(--text-h)">Test Epigenético: 9 clicks</strong> — nuevo servicio con tracción inicial. Potencial de campaña específica.
+            </div>
+          </div>
+          <div class="insight warn" style="margin-top:12px;font-size:10.5px">
+            <strong>Insight estratégico:</strong> Tonificación Corporal y Rejuvenecimiento Facial generan más interés que Capilar en Linktree. Evaluar crear landing pages o flujos de bot separados para estos servicios — actualmente se pierden por falta de atención dedicada.
+          </div>
         </div>
       </div>
     </div>
@@ -835,46 +1051,46 @@ nav { padding: 20px 0; flex: 1; }
       <div class="section-header">
         <h2 class="section-title">Google My Business</h2>
         <div class="section-rule"></div>
-        <span class="source-tag">Nov 2025 – Abr 2026</span>
+        <span class="source-tag">Nov 2025 – May 2026</span>
       </div>
 
       <div class="gmb-row">
         <div class="gmb-card">
           <div class="gmb-icon">📍</div>
           <div>
-            <div class="gmb-val">136</div>
-            <div class="gmb-lbl">Interacciones del Perfil</div>
+            <div class="gmb-val">210</div>
+            <div class="gmb-lbl">Interacciones Acum. (Mar–May)</div>
           </div>
         </div>
         <div class="gmb-card">
-          <div class="gmb-icon">🗺</div>
+          <div class="gmb-icon">👁️</div>
           <div>
-            <div class="gmb-val">128</div>
-            <div class="gmb-lbl">Solicitudes de Dirección</div>
+            <div class="gmb-val">74</div>
+            <div class="gmb-lbl">Vistas Perfil · Mayo 2026</div>
           </div>
         </div>
         <div class="gmb-card">
-          <div class="gmb-icon">📞</div>
+          <div class="gmb-icon">📱</div>
           <div>
-            <div class="gmb-val">2</div>
-            <div class="gmb-lbl">Llamadas desde Perfil</div>
+            <div class="gmb-val">65%</div>
+            <div class="gmb-lbl">Búsquedas vía móvil (Maps + Search)</div>
           </div>
         </div>
       </div>
 
-      <div class="chart-grid cg-2">
+      <div class="chart-grid" style="grid-template-columns:2fr 1fr;gap:16px">
         <div class="card">
-          <div class="card-title">Interacciones del Perfil — Evolución Mensual</div>
-          <div style="height:170px"><canvas id="chartGMBInt"></canvas></div>
+          <div class="card-title">Vistas del Perfil — Evolución Mensual (Nov 2025 – May 2026)</div>
+          <div style="height:180px"><canvas id="chartGMBInt"></canvas></div>
         </div>
         <div class="card">
-          <div class="card-title">Solicitudes de Dirección — Evolución</div>
-          <div style="height:170px"><canvas id="chartGMBDir"></canvas></div>
+          <div class="card-title">Cómo encontraron el perfil — Mayo 2026</div>
+          <div style="height:180px"><canvas id="chartGMBPlatform"></canvas></div>
         </div>
       </div>
 
-      <div class="insight">
-        <strong>Insight GMB:</strong> El perfil estaba inactivo antes de Feb 2026. El salto a ~68 interacciones/mes en Mar–Abr coincide directamente con el inicio de campañas Meta. La pauta está generando búsquedas directas de marca. Las 128 solicitudes de dirección representan alto intent de visita física — señal positiva para la clínica.
+      <div class="insight" style="margin-top:14px">
+        <strong>Insight GMB Mayo:</strong> 74 vistas del perfil — leve crecimiento vs Abr. El 65% llegan desde móvil (Maps + Search), señal de que los usuarios están buscando activamente mientras están en movimiento. <strong>Google Maps móvil (30%)</strong> indica alto intent de visita física. La pauta de Meta sigue generando búsquedas directas de marca en Google.
       </div>
     </div>
 
@@ -887,72 +1103,72 @@ nav { padding: 20px 0; flex: 1; }
       <div class="section-header">
         <h2 class="section-title">CRM Setter Bot — Métricas Generales</h2>
         <div class="section-rule"></div>
-        <span class="source-tag">Abr 6–30, 2026</span>
+        <span class="source-tag">May 1–31, 2026</span>
       </div>
 
       <div class="kpi-row kpi-4">
         <div class="kpi accent">
           <div class="kpi-label">Conversaciones Totales</div>
-          <div class="kpi-val gold">311</div>
-          <div class="kpi-sub">= 311 contactos únicos</div>
+          <div class="kpi-val gold">199</div>
+          <div class="kpi-sub">= 199 contactos únicos · Mayo 2026</div>
         </div>
         <div class="kpi accent">
-          <div class="kpi-label">Mensajes Totales</div>
-          <div class="kpi-val">3,272</div>
-          <div class="kpi-sub">Promedio: 10.5 msgs/convo</div>
+          <div class="kpi-label">Msgs Pacientes (741 analizados)</div>
+          <div class="kpi-val">115</div>
+          <div class="kpi-sub">Deals creados · 57.8% de convos avanzaron</div>
         </div>
         <div class="kpi accent-ok">
           <div class="kpi-label">Bookings Creados</div>
-          <div class="kpi-val success">22</div>
-          <div class="kpi-sub">Citas agendadas exitosamente</div>
+          <div class="kpi-val success">28</div>
+          <div class="kpi-sub">Citas agendadas · 9 confirmadas</div>
         </div>
-        <div class="kpi accent-ok">
+        <div class="kpi accent-warn">
           <div class="kpi-label">Human Takeover</div>
-          <div class="kpi-val sm">8</div>
-          <div class="kpi-sub">2.6% de conversaciones · convos más largas</div>
+          <div class="kpi-val sm danger">28</div>
+          <div class="kpi-sub">14% de convos · ▲ vs 2.6% en Abr · cobro manual</div>
         </div>
       </div>
 
       <div class="kpi-row kpi-4" style="margin-top:0">
-        <div class="kpi accent-warn">
+        <div class="kpi accent-ok">
           <div class="kpi-label">Conversión a Cita</div>
-          <div class="kpi-val sm danger">5.8%</div>
-          <div class="kpi-sub">22 bookings / 311 convos</div>
+          <div class="kpi-val sm success">14.1%</div>
+          <div class="kpi-sub">28 bookings / 199 convos · ▲ vs 5.8% Abr</div>
         </div>
         <div class="kpi accent-warn">
           <div class="kpi-label">Tasa de Cancelación</div>
-          <div class="kpi-val sm danger">81.8%</div>
-          <div class="kpi-sub">Principal causa: pago expirado (56%)</div>
+          <div class="kpi-val sm danger">85.7%</div>
+          <div class="kpi-sub">21/28 por pago expirado Bold (87.5%)</div>
+        </div>
+        <div class="kpi accent-warn">
+          <div class="kpi-label">Asistencia a Cita</div>
+          <div class="kpi-val sm danger">3.6%</div>
+          <div class="kpi-sub">Solo 1 paciente asistió de 28 agendados</div>
         </div>
         <div class="kpi">
-          <div class="kpi-label">Msgs Promedio / Convo</div>
-          <div class="kpi-val sm">10.5</div>
-          <div class="kpi-sub">Conversaciones de baja-media profundidad</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Leads Fuera de Bogotá</div>
-          <div class="kpi-val sm">28</div>
-          <div class="kpi-sub">9% de convos · no calificados geo</div>
+          <div class="kpi-label">Leads en Inglés (ruido)</div>
+          <div class="kpi-val sm">52</div>
+          <div class="kpi-sub">26% de convos · ad set en inglés · no convierten</div>
         </div>
       </div>
 
       <!-- Conversaciones diarias chart -->
       <div class="card" style="margin-top:16px">
-        <div class="card-title">Conversaciones Diarias — Abr 6–30, 2026</div>
+        <div class="card-title">Conversaciones por Día de la Semana — Mayo 2026 (199 total)</div>
         <div style="height:190px"><canvas id="chartDailyConvos"></canvas></div>
         <div class="insight" style="margin-top:14px">
-          <strong>Pico inicial:</strong> Los días Abr 7–8 (27 convos/día) y Abr 13 (28 convos/día) coinciden con mayor inversión en ads. La caída sostenida de Abr 24–27 (5–9 convos) refleja una posible reducción de pauta o agotamiento de audiencia.
+          <strong>Lunes lidera con 41 convos</strong> (21% del total semanal) — los leads acumulados del fin de semana disparan el lunes. Sábado es el segundo día más activo (32), señal de que la audiencia de Reviá es activa en fines de semana. Martes es el día más bajo (20).
         </div>
       </div>
 
       <!-- By hour + by day -->
       <div class="chart-grid cg-2" style="margin-top:16px">
         <div class="card">
-          <div class="card-title">Conversaciones por Hora (Bogotá)</div>
+          <div class="card-title">Conversaciones por Hora — Mayo 2026</div>
           <div style="height:190px"><canvas id="chartByHour"></canvas></div>
         </div>
         <div class="card">
-          <div class="card-title">Conversaciones por Día de Semana</div>
+          <div class="card-title">Conversaciones por Día de Semana — Mayo 2026</div>
           <div style="height:190px"><canvas id="chartByDay"></canvas></div>
         </div>
       </div>
@@ -965,284 +1181,43 @@ nav { padding: 20px 0; flex: 1; }
       <div class="section-header">
         <h2 class="section-title">Pipeline de Conversión</h2>
         <div class="section-rule"></div>
-        <span class="source-tag">CRM · Abr 2026</span>
+        <span class="source-tag">CRM · May 2026</span>
       </div>
 
       <div class="funnel">
         <div class="funnel-step">
-          <div class="funnel-n">613</div>
-          <div class="funnel-lbl">Leads Generados (Ads)</div>
+          <div class="funnel-n">302</div>
+          <div class="funnel-lbl">Leads Meta Ads (May)</div>
           <div class="funnel-pct">100%</div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-n">311</div>
-          <div class="funnel-lbl">Conversaciones Bot (Abr)</div>
-          <div class="funnel-pct">~51%</div>
+          <div class="funnel-n">199</div>
+          <div class="funnel-lbl">Conversaciones Bot</div>
+          <div class="funnel-pct">~66%</div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-n">80</div>
-          <div class="funnel-lbl">Nuevos (sin avanzar)</div>
-          <div class="funnel-pct" style="color:var(--warning)">26%</div>
+          <div class="funnel-n">115</div>
+          <div class="funnel-lbl">Deals Creados</div>
+          <div class="funnel-pct" style="color:var(--warning)">58%</div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-n">22</div>
+          <div class="funnel-n">28</div>
           <div class="funnel-lbl">Bookings Creados</div>
-          <div class="funnel-pct">7.1%</div>
+          <div class="funnel-pct">14.1%</div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-n">4</div>
+          <div class="funnel-n">9</div>
           <div class="funnel-lbl">Citas Confirmadas</div>
-          <div class="funnel-pct" style="color:var(--success)">~18% de bookings</div>
-        </div>
-        <div class="funnel-step">
-          <div class="funnel-n">23</div>
-          <div class="funnel-lbl">Perdidos</div>
-          <div class="funnel-pct" style="color:var(--danger)">7.4%</div>
+          <div class="funnel-pct" style="color:var(--success)">32% de bookings</div>
         </div>
       </div>
 
-      <div class="insight warn" style="margin-top:16px">
-        <strong>Cuello de botella crítico:</strong> La tasa de cancelación del 81.8% anula gran parte del trabajo de los setters. El 56% de cancelaciones son por <em>payment_expired</em> en Bold — el usuario llega al punto de agendar pero no completa el pago a tiempo. Se recomienda acortar el deadline de pago, enviar recordatorio push a las 2h y ofrecer alternativa de pago en clínica.
+      <div class="insight" style="margin-top:16px">
+        <strong>Oportunidad de mayor impacto:</strong> El 86% de conversaciones fue atendido por IA. De los 28 bookings creados, 9 citas fueron confirmadas. Ajustar dos cosas — dar la dirección antes del pago y reenviar el link Bold automáticamente — podría duplicar la tasa de confirmaciones sin cambiar el presupuesto de pauta.
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         SECCIÓN 7 — MAPA DE FRICCIÓN
-    ══════════════════════════════════════════ -->
-    <div id="friccion" class="section reveal">
-      <div class="section-header">
-        <h2 class="section-title">Mapa de Fricción por Etapa</h2>
-        <div class="section-rule"></div>
-        <span class="source-tag">CRM · Análisis Cualitativo</span>
-      </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
-        <!-- Nuevos -->
-        <div class="friction-group">
-          <div class="friction-group-title">
-            🔵 Nuevos <span class="friction-count">80</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">🤖</span>
-            <span style="flex:1;font-size:11.5px">Auto-msg CTWA sin respuesta</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:26%"></div></div>
-            <span class="friction-pct">26%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">📍</span>
-            <span style="flex:1;font-size:11.5px">Fuera de Bogotá, abandonaron</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:25%"></div></div>
-            <span class="friction-pct">25%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">🙅</span>
-            <span style="flex:1;font-size:11.5px">"No, gracias" después de info</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:13%"></div></div>
-            <span class="friction-pct">13%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">📋</span>
-            <span style="flex:1;font-size:11.5px">Lead Form sin engagement post</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:11%"></div></div>
-            <span class="friction-pct">11%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">🎤</span>
-            <span style="flex:1;font-size:11.5px">Enviaron audio, bot no soporta</span>
-            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:9%"></div></div>
-            <span class="friction-pct">9%</span>
-          </div>
-        </div>
-
-        <!-- Perdidos -->
-        <div class="friction-group">
-          <div class="friction-group-title">
-            🟠 Perdidos <span class="friction-count">23</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">📍</span>
-            <span style="flex:1;font-size:11.5px">Descubrieron que están lejos</span>
-            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:43%"></div></div>
-            <span class="friction-pct">43%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">💬</span>
-            <span style="flex:1;font-size:11.5px">Primer msg del ad y desaparecieron</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:22%"></div></div>
-            <span class="friction-pct">22%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">💰</span>
-            <span style="flex:1;font-size:11.5px">Preguntaron precio y no siguieron</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:22%"></div></div>
-            <span class="friction-pct">22%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">🎤</span>
-            <span style="flex:1;font-size:11.5px">Enviaron audio, no recibieron ayuda</span>
-            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:13%"></div></div>
-            <span class="friction-pct">13%</span>
-          </div>
-        </div>
-
-        <!-- Cancelaciones -->
-        <div class="friction-group">
-          <div class="friction-group-title">
-            🔴 Cancelaciones <span class="friction-count">18</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">⏰</span>
-            <span style="flex:1;font-size:11.5px">Pago expirado — no completaron Bold</span>
-            <div class="friction-bar-wrap"><div class="friction-bar red" style="width:56%"></div></div>
-            <span class="friction-pct">56%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">❓</span>
-            <span style="flex:1;font-size:11.5px">Sin razón documentada</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:28%"></div></div>
-            <span class="friction-pct">28%</span>
-          </div>
-          <div class="friction-row">
-            <span class="friction-emoji">🔄</span>
-            <span style="flex:1;font-size:11.5px">Legacy / orphan del sistema anterior</span>
-            <div class="friction-bar-wrap"><div class="friction-bar" style="width:17%"></div></div>
-            <span class="friction-pct">17%</span>
-          </div>
-          <div class="insight warn" style="margin-top:12px;font-size:10.5px">
-            <strong>Acción urgente:</strong> Reducir deadline de pago Bold o agregar recordatorio automático a las 2h de booking creado.
-          </div>
-        </div>
-      </div>
-
-      <!-- Fricciones clave -->
-      <div class="chart-grid cg-2" style="margin-top:16px">
-        <div class="card">
-          <div class="card-title">Fricciones Transversales del Bot</div>
-          <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
-            <div>
-              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
-                <span>🎤 Audio = muerte de conversación (7 de 8 que empezaron con audio abandonaron)</span>
-                <span style="color:var(--danger);font-weight:500">Alta</span>
-              </div>
-              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:88%;background:var(--danger);border-radius:3px"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
-                <span>⏰ Pago Bold expirado — 56% de cancelaciones</span>
-                <span style="color:var(--danger);font-weight:500">Alta</span>
-              </div>
-              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:56%;background:var(--danger);border-radius:3px"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
-                <span>📍 Geofiltro tardío — 25% preguntan ubicación sin ser cualificados antes</span>
-                <span style="color:var(--warning);font-weight:500">Media</span>
-              </div>
-              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:60%;background:var(--warning);border-radius:3px"></div></div>
-            </div>
-            <div>
-              <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px">
-                <span>📝 Primer mensaje del bot muy largo (200+ chars para alguien que dijo "Hola")</span>
-                <span style="color:var(--warning);font-weight:500">Media</span>
-              </div>
-              <div style="background:#F0E8DC;border-radius:3px;height:6px"><div style="height:100%;width:45%;background:var(--warning);border-radius:3px"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">Human Takeovers — Patrones (8 casos)</div>
-          <div style="font-size:12px;color:var(--text-b);line-height:1.8;margin-top:4px">
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              🔄 <strong>Reprogramación de citas</strong> — bot no puede resolverlo fluidamente
-            </div>
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              📋 <strong>Caso de 105 mensajes</strong> — persona preguntando servicios corporales/faciales (no son de Reviá Capilar)
-            </div>
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              👤 <strong>Maria Ortiz</strong> — agendó y luego canceló, requirió seguimiento humano
-            </div>
-            <div style="padding:8px 0">
-              📊 <strong>Convos de 25–105 mensajes</strong> — los human takeover son las convos más largas y complejas
-            </div>
-          </div>
-          <div class="insight" style="margin-top:12px;font-size:10.5px">
-            <strong>Insight:</strong> El 2.6% de human takeover es bajo — el bot maneja bien el volumen. Los casos escalados son genuinamente complejos.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         SECCIÓN 8 — TEMAS & CIUDADES
-    ══════════════════════════════════════════ -->
-    <div id="temas" class="section reveal">
-      <div class="section-header">
-        <h2 class="section-title">Temas & Ciudades</h2>
-        <div class="section-rule"></div>
-        <span class="source-tag">CRM · Clustering Temático</span>
-      </div>
-
-      <div class="topic-grid" style="margin-bottom:20px">
-        <div class="topic-card">
-          <div class="topic-n">110</div>
-          <div class="topic-lbl">Preguntan ubicación</div>
-          <div class="topic-pct">35% de conversaciones</div>
-        </div>
-        <div class="topic-card">
-          <div class="topic-n">88</div>
-          <div class="topic-lbl">Preguntan precio</div>
-          <div class="topic-pct">28% de conversaciones</div>
-        </div>
-        <div class="topic-card">
-          <div class="topic-n">39</div>
-          <div class="topic-lbl">Describen caída capilar</div>
-          <div class="topic-pct">13% — alta intención</div>
-        </div>
-        <div class="topic-card">
-          <div class="topic-n">28</div>
-          <div class="topic-lbl">Fuera de Bogotá</div>
-          <div class="topic-pct">9% — no calificados</div>
-        </div>
-      </div>
-
-      <div class="chart-grid cg-2">
-        <div class="card">
-          <div class="card-title">Ciudades Mencionadas — Leads Fuera de Bogotá</div>
-          <div style="margin-top:8px">
-            <div class="city-row"><span class="city-name">Otras / lejos</span><div class="city-bar-wrap"><div class="city-bar" style="width:100%"></div></div><span class="city-val">10</span></div>
-            <div class="city-row"><span class="city-name">Medellín</span><div class="city-bar-wrap"><div class="city-bar" style="width:60%"></div></div><span class="city-val">6</span></div>
-            <div class="city-row"><span class="city-name">Bucaramanga</span><div class="city-bar-wrap"><div class="city-bar" style="width:30%"></div></div><span class="city-val">3</span></div>
-            <div class="city-row"><span class="city-name">Cali</span><div class="city-bar-wrap"><div class="city-bar" style="width:30%"></div></div><span class="city-val">3</span></div>
-            <div class="city-row"><span class="city-name">Pasto</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
-            <div class="city-row"><span class="city-name">Popayán</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
-            <div class="city-row"><span class="city-name">Barranquilla</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
-            <div class="city-row"><span class="city-name">Chía</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
-            <div class="city-row"><span class="city-name">Tunja / Duitama</span><div class="city-bar-wrap"><div class="city-bar" style="width:10%"></div></div><span class="city-val">1</span></div>
-          </div>
-          <div class="insight" style="margin-top:12px;font-size:10.5px">
-            <strong>Oportunidad de franquicia:</strong> Medellín con 6 leads, Cali y Bucaramanga con 3 cada una — la demanda llega sola desde otras ciudades sin ninguna pauta local. Esto valida que el modelo de Reviá tiene tracción nacional y es candidato natural para una estrategia de franquicia: replicar el protocolo, la marca y el sistema de setters en otras ciudades sin depender de atender todo desde Bogotá.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Análisis de Intención — ¿Qué revela el clustering?</div>
-          <div style="font-size:12px;color:var(--text-b);line-height:1.75;margin-top:4px">
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              📍 <strong style="color:var(--text-h)">35% preguntan ubicación primero</strong> — el anuncio atrae curiosos que no saben dónde queda la clínica. Oportunidad: incluir "Bogotá · Edificio La Font · Piso 2" en el copy del ad.
-            </div>
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              💰 <strong style="color:var(--text-h)">28% preguntan precio</strong> — sin ancla de precio en el ad, generamos tráfico de baja intención. Considerar agregar rango de precios en la creatividad.
-            </div>
-            <div style="padding:8px 0;border-bottom:1px solid #F0E8DC">
-              ✅ <strong style="color:var(--success)">13% describe su problema capilar</strong> — estos son los leads de ALTA calidad. Son los que más probablemente convierten.
-            </div>
-            <div style="padding:8px 0">
-              🌍 <strong style="color:var(--text-h)">6 + 5 = 11 confusión de servicio</strong> — personas buscando servicios corporales/faciales (no capilar) o fuera de Bogotá. El ad necesita más especificidad de servicio.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div><!-- /content -->
 </main>
@@ -1253,19 +1228,21 @@ nav { padding: 20px 0; flex: 1; }
 // DATA
 // ═══════════════════════════════════════════════════
 const MONTHS_DATA = {
-  all:  { spend: 1451, results: 612, reach: 132674, viewers: 207469, posts: 12, orgViews: 1102, orgReach: 594, convs: 8, revenue: 6000, roas: 4.13, note: 'Acumulado Ene–Abr 2026', convNote: '8 conversiones totales · AOV $750 USD' },
+  all:  { spend: 2151, results: 914, reach: 202618, viewers: 474937, posts: 12, orgViews: 1102, orgReach: 594, convs: 8, revenue: 6000, roas: 2.79, note: 'Acumulado Ene–May 2026', convNote: '8 conversiones capilar · Mayo pendiente de confirmar' },
   ene:  { spend: 0,    results: 0,   reach: 0,       viewers: 3,      posts: 0,  orgViews: 0,    orgReach: 0,   convs: 0, revenue: 0,    roas: 0,    note: 'Sin inversión en pauta en Enero', convNote: 'Sin conversiones documentadas' },
   feb:  { spend: 397,  results: 68,  reach: 44213,  viewers: 44729,  posts: 2,  orgViews: 419,  orgReach: 178, convs: 2, revenue: 1500, roas: 3.77, note: 'Mes de arranque de campañas', convNote: '2 conversiones capilar (pagadas)' },
   mar:  { spend: 463,  results: 200, reach: 27766,  viewers: 44541,  posts: 3,  orgViews: 416,  orgReach: 240, convs: 2, revenue: 1500, roas: 3.24, note: 'Mes de mayor volumen de resultados', convNote: '2 conversiones capilar' },
   abr:  { spend: 591,  results: 344, reach: 60695,  viewers: 118196, posts: 4,  orgViews: 267,  orgReach: 176, convs: 4, revenue: 3000, roas: 5.08, note: 'Pico de viewers y conversiones. CRM activo', convNote: '4 conversiones capilar (pagadas)' },
+  may:  { spend: 700,  results: 302, reach: 69944,  viewers: 267468, posts: 0,  orgViews: 0,    orgReach: 0,   convs: 0, revenue: 0,    roas: 0,    note: 'Mayor inversión del período · 6 consultas nuevas · Instagram fuerte', convNote: 'Procedimientos capilar pendientes de confirmar' },
 };
 
 const PERIOD_LABELS = {
-  all: 'Enero – Abril 2026 · Acumulado',
+  all: 'Enero – Mayo 2026 · Acumulado',
   ene: 'Enero 2026',
   feb: 'Febrero 2026',
   mar: 'Marzo 2026',
   abr: 'Abril 2026',
+  may: 'Mayo 2026',
 };
 
 let currentMonth = 'all';
@@ -1290,24 +1267,98 @@ const MUTED = '#D4C9B8';
 // CHARTS
 // ═══════════════════════════════════════════════════
 
+// YouTube Abril
+new Chart(document.getElementById('chartYTAbril'), {
+  type: 'bar',
+  data: {
+    labels: ['Realza SIN Cirugías', 'Exosomas', '¿Saliendo entradas?', 'Alopecia hereditaria', 'Implante capilar'],
+    datasets: [{ data: [394, 228, 122, 4, 3], backgroundColor: [GOLD2, GOLD, GOLD3, MUTED, MUTED], borderRadius: 5, borderWidth: 0 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x} vistas` } } },
+    scales: { x: { grid: { color: '#F0E8DC' }, beginAtZero: true }, y: { grid: { display: false }, ticks: { font: { size: 10 } } } }
+  }
+});
+
+// YouTube Mayo
+new Chart(document.getElementById('chartYTMayo'), {
+  type: 'bar',
+  data: {
+    labels: ['Caída del cabello', 'Test epigenético', '¿Saliendo entradas?', 'Realza SIN Cirugías'],
+    datasets: [{ data: [147, 87, 2, 1], backgroundColor: [GOLD2, GOLD, MUTED, MUTED], borderRadius: 5, borderWidth: 0 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x} vistas` } } },
+    scales: { x: { grid: { color: '#F0E8DC' }, beginAtZero: true }, y: { grid: { display: false }, ticks: { font: { size: 10 } } } }
+  }
+});
+
+// YouTube Audiencia por edad y género
+new Chart(document.getElementById('chartYTAudiencia'), {
+  type: 'bar',
+  data: {
+    labels: ['25–34', '35–44', '45–54', '55–64', '65+'],
+    datasets: [
+      { label: 'Femenino', data: [9.3, 7.3, 13.8, 12.1, 11.0], backgroundColor: 'rgba(196,153,90,0.75)', borderRadius: 3, borderWidth: 0 },
+      { label: 'Masculino', data: [19.3, 15.9, 5.5, 2.7, 3.2], backgroundColor: 'rgba(58,95,122,0.7)', borderRadius: 3, borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { boxWidth: 10, font: { size: 10 } } }, tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` } } },
+    scales: {
+      y: { grid: { color: '#F0E8DC' }, ticks: { callback: v => v + '%' }, stacked: false },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// Linktree clicks by link — Mayo 2026
+new Chart(document.getElementById('chartLinktree'), {
+  type: 'bar',
+  data: {
+    labels: ['Tonif. Corporal', 'Trats. Capilares', 'Reservar Val.', 'Facial', 'Bono Madres', 'Test Epigenético', 'Cejas/Barba'],
+    datasets: [{
+      data: [32, 18, 16, 11, 11, 9, 0],
+      backgroundColor: ['#A07840', GOLD, GOLD2, GOLD3, MUTED, MUTED, '#E0D4C0'],
+      borderRadius: 5,
+      borderWidth: 0
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x} clicks` } }
+    },
+    scales: {
+      x: { grid: { color: '#F0E8DC' }, beginAtZero: true },
+      y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
 // Monthly Ads trend
 const chartMonthly = new Chart(document.getElementById('chartMonthlyAds'), {
   type: 'bar',
   data: {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
     datasets: [
       {
         type: 'bar',
         label: 'Inversión USD',
-        data: [0, 397, 463, 591],
-        backgroundColor: [MUTED, GOLD3, GOLD, GOLD2],
+        data: [0, 397, 463, 591, 700],
+        backgroundColor: [MUTED, GOLD3, GOLD, GOLD2, '#C46A6A'],
         borderRadius: 4,
         yAxisID: 'y',
       },
       {
         type: 'line',
         label: 'Resultados',
-        data: [0, 68, 200, 344],
+        data: [0, 68, 200, 344, 302],
         borderColor: BLUE,
         backgroundColor: 'rgba(58,95,122,0.08)',
         pointBackgroundColor: BLUE,
@@ -1355,13 +1406,13 @@ new Chart(document.getElementById('chartSpendDonut'), {
 new Chart(document.getElementById('chartROAS'), {
   type: 'bar',
   data: {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
     datasets: [
       {
         type: 'bar',
         label: 'Conversiones',
-        data: [0, 2, 2, 4],
-        backgroundColor: [MUTED, GOLD3, GOLD3, GOLD],
+        data: [0, 2, 2, 4, 9],
+        backgroundColor: [MUTED, GOLD3, GOLD3, GOLD, '#C4995A'],
         borderRadius: 4,
         borderWidth: 0,
         yAxisID: 'y',
@@ -1369,7 +1420,7 @@ new Chart(document.getElementById('chartROAS'), {
       {
         type: 'line',
         label: 'ROAS',
-        data: [null, 3.77, 3.24, 5.08],
+        data: [null, 3.77, 3.24, 5.08, null],
         borderColor: GREEN,
         backgroundColor: 'rgba(74,124,89,0.08)',
         pointBackgroundColor: GREEN,
@@ -1400,10 +1451,10 @@ new Chart(document.getElementById('chartROAS'), {
 new Chart(document.getElementById('chartViewersMonth'), {
   type: 'bar',
   data: {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
     datasets: [{
-      data: [3, 44729, 44541, 118196],
-      backgroundColor: [MUTED, GOLD3, GOLD, GOLD2],
+      data: [3, 44729, 44541, 118196, 267468],
+      backgroundColor: [MUTED, GOLD3, GOLD, GOLD2, '#C46A6A'],
       borderRadius: 5,
       borderWidth: 0
     }]
@@ -1438,13 +1489,13 @@ new Chart(document.getElementById('chartFormats'), {
   }
 });
 
-// GMB Interactions
+// GMB Interactions — updated with May
 new Chart(document.getElementById('chartGMBInt'), {
   type: 'line',
   data: {
-    labels: ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26'],
+    labels: ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26', 'May 26'],
     datasets: [{
-      data: [0, 0, 0, 2, 68, 66],
+      data: [0, 0, 0, 2, 68, 66, 74],
       borderColor: GOLD,
       backgroundColor: 'rgba(196,153,90,0.1)',
       fill: true, tension: 0.3,
@@ -1461,17 +1512,36 @@ new Chart(document.getElementById('chartGMBInt'), {
   }
 });
 
-// GMB Directions
-new Chart(document.getElementById('chartGMBDir'), {
-  type: 'line',
+// GMB Platform breakdown — Mayo
+new Chart(document.getElementById('chartGMBPlatform'), {
+  type: 'doughnut',
   data: {
-    labels: ['Nov 25', 'Dic 25', 'Ene 26', 'Feb 26', 'Mar 26', 'Abr 26'],
+    labels: ['Search · Desktop', 'Maps · Móvil', 'Search · Móvil', 'Maps · Desktop'],
     datasets: [{
-      data: [0, 0, 0, 0, 63, 65],
-      borderColor: BLUE,
-      backgroundColor: 'rgba(58,95,122,0.08)',
-      fill: true, tension: 0.3,
-      pointBackgroundColor: BLUE, pointRadius: 4, borderWidth: 2
+      data: [26, 22, 17, 9],
+      backgroundColor: [BLUE, RED, GOLD, GREEN],
+      borderWidth: 2, borderColor: '#FFFFFF', hoverOffset: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '58%',
+    plugins: {
+      legend: { position: 'bottom', labels: { boxWidth: 10, padding: 8, font: { size: 9.5 } } },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed} (${Math.round(ctx.parsed/74*100)}%)` } }
+    }
+  }
+});
+
+// Daily convos (CRM) — Mayo por día de semana
+new Chart(document.getElementById('chartDailyConvos'), {
+  type: 'bar',
+  data: {
+    labels: ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
+    datasets: [{
+      data: [41, 20, 33, 21, 26, 32, 26],
+      backgroundColor: [GOLD2, MUTED, GOLD, MUTED, GOLD3, GOLD, MUTED],
+      borderRadius: 5, borderWidth: 0
     }]
   },
   options: {
@@ -1484,36 +1554,13 @@ new Chart(document.getElementById('chartGMBDir'), {
   }
 });
 
-// Daily convos (CRM)
-new Chart(document.getElementById('chartDailyConvos'), {
-  type: 'line',
-  data: {
-    labels: ['Abr 6','Abr 7','Abr 8','Abr 9','Abr 10','Abr 11','Abr 12','Abr 13','Abr 14','Abr 15','Abr 16','Abr 17','Abr 18','Abr 19','Abr 20','Abr 21','Abr 22','Abr 23','Abr 24','Abr 25','Abr 26','Abr 27','Abr 28','Abr 29','Abr 30'],
-    datasets: [{
-      data: [1,13,27,18,15,16,16,28,11,16,14,11,14,13,13,13,11,13,5,8,9,9,6,6,10],
-      borderColor: GOLD,
-      backgroundColor: 'rgba(196,153,90,0.1)',
-      fill: true, tension: 0.3,
-      pointBackgroundColor: GOLD, pointRadius: 3, borderWidth: 2
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      y: { grid: { color: '#F0E8DC' }, beginAtZero: true, max: 32 },
-      x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } }
-    }
-  }
-});
-
-// By hour
+// By hour — Mayo datos reales
 new Chart(document.getElementById('chartByHour'), {
   type: 'bar',
   data: {
-    labels: ['0h','2h','4h','6h','8h','10h','12h','14h','16h','18h','20h','22h'],
+    labels: ['0h','1h','2h','3h','4h','5h','6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h','23h'],
     datasets: [{
-      data: [7,5,3,21,9,14,23,13,14,20,19,17,14],
+      data: [2,3,3,3,4,5,11,14,10,12,12,6,4,5,10,6,6,14,11,12,14,15,14,3],
       backgroundColor: GOLD3,
       borderRadius: 3, borderWidth: 0
     }]
@@ -1528,14 +1575,14 @@ new Chart(document.getElementById('chartByHour'), {
   }
 });
 
-// By day
+// By day — Mayo datos reales
 new Chart(document.getElementById('chartByDay'), {
   type: 'bar',
   data: {
     labels: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
     datasets: [{
-      data: [38, 51, 43, 63, 41, 35, 38],
-      backgroundColor: [GOLD3,GOLD,GOLD3,GOLD2,GOLD3,MUTED,GOLD3],
+      data: [26, 41, 20, 33, 21, 26, 32],
+      backgroundColor: [GOLD3,GOLD2,MUTED,GOLD,MUTED,GOLD3,GOLD],
       borderRadius: 4, borderWidth: 0
     }]
   },
@@ -1568,11 +1615,13 @@ function setMonth(m) {
 
   const d = MONTHS_DATA[m];
   const isAll = m === 'all';
+  const isMay = m === 'may';
 
   document.getElementById('resumen-all').classList.toggle('hidden', !isAll);
-  document.getElementById('resumen-month').classList.toggle('active', !isAll);
+  document.getElementById('resumen-month').classList.toggle('active', !isAll && !isMay);
+  document.getElementById('resumen-may').classList.toggle('active', isMay);
 
-  if (!isAll) {
+  if (!isAll && !isMay) {
     document.getElementById('m-spend').textContent = '$' + fmtNum(d.spend);
     document.getElementById('m-results').textContent = fmtNum(d.results);
     document.getElementById('m-reach').textContent = fmtNum(d.reach);
@@ -1585,7 +1634,7 @@ function setMonth(m) {
     document.getElementById('m-note').textContent = d.note;
   }
 
-  const highlights = { all: [MUTED,GOLD3,GOLD,GOLD2], ene: [GOLD2,MUTED,MUTED,MUTED], feb: [MUTED,GOLD2,MUTED,MUTED], mar: [MUTED,MUTED,GOLD2,MUTED], abr: [MUTED,MUTED,MUTED,GOLD2] };
+  const highlights = { all: [MUTED,GOLD3,GOLD,GOLD2,'#C46A6A'], ene: [GOLD2,MUTED,MUTED,MUTED,MUTED], feb: [MUTED,GOLD2,MUTED,MUTED,MUTED], mar: [MUTED,MUTED,GOLD2,MUTED,MUTED], abr: [MUTED,MUTED,MUTED,GOLD2,MUTED], may: [MUTED,MUTED,MUTED,MUTED,'#C46A6A'] };
   chartMonthly.data.datasets[0].backgroundColor = highlights[m];
   chartMonthly.update('none');
 }
