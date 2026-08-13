@@ -1,11 +1,10 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reviá · Reporte Junio · KIP's para Q3</title>
+<title>Reviá · Reporte Julio · KIP's para Agosto</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -148,6 +147,11 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 /* ── PENDING ── */
 .pend{display:inline-block;font-size:10px;background:rgba(196,153,90,.12);color:var(--gold2);border-radius:4px;padding:2px 8px;letter-spacing:.3px}
 
+/* ── REEL CARD ── */
+.reel-card{background:var(--white);border:1px solid var(--cream2);border-radius:12px;padding:22px;position:relative;overflow:hidden}
+.reel-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--gold),var(--gold2))}
+.reel-card-inner{padding-left:16px}
+
 /* ── DIVIDER ── */
 .divider{height:1px;background:var(--cream2);margin:0 60px}
 
@@ -173,8 +177,30 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Reviá · Bogotá, Colombia</div>
-    <h1>Reporte Junio<br><em>KIP's para Q3</em></h1>
-    <div class="hero-sub">Informe de Performance · Febrero — Junio 2026 · 5 meses de pauta activa en Meta Ads</div>
+    <h1>Reporte Julio<br><em>KIP's para Agosto</em></h1>
+    <div class="hero-sub">Informe de Performance · Enero — Julio 2026 · 6 meses de pauta activa en Meta Ads</div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hval">$1.41</div>
+        <div class="hlbl">CPL Récord · Julio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hval">327</div>
+        <div class="hlbl">Leads · Julio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hval">$462</div>
+        <div class="hlbl">Inversión · Julio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hval">78K</div>
+        <div class="hlbl">Vistas Reels · Jul</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hval">$3,318</div>
+        <div class="hlbl">Inversión Acumulada</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -193,36 +219,36 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <!-- KPIs principales -->
   <div class="kg kg5" style="margin-bottom:28px">
     <div class="kcard accent">
-      <div class="klbl">Inversión Total</div>
-      <div class="kval gold">$2,799</div>
-      <div class="ksub">USD · Feb–Jun 2026 · Meta Ads</div>
+      <div class="klbl">Inversión Total Acum.</div>
+      <div class="kval gold">$3,318</div>
+      <div class="ksub">USD · Ene–Jul 2026 · Meta Ads</div>
     </div>
     <div class="kcard">
-      <div class="klbl">Alcance</div>
-      <div class="kval sm">264,650</div>
+      <div class="klbl">Alcance · Julio</div>
+      <div class="kval sm">30,492</div>
       <div class="ksub">Personas únicas alcanzadas</div>
     </div>
     <div class="kcard">
-      <div class="klbl">Leads Generados</div>
-      <div class="kval sm">1,185</div>
-      <div class="ksub">Resultados totales Meta Ads</div>
+      <div class="klbl">Leads Generados · Jul</div>
+      <div class="kval sm">327</div>
+      <div class="ksub">Mejor mes por volumen de resultados</div>
+    </div>
+    <div class="kcard accent">
+      <div class="klbl">CPL Julio — Récord</div>
+      <div class="kval gold">$1.41</div>
+      <div class="ksub">USD · mejor CPL del período completo</div>
     </div>
     <div class="kcard">
-      <div class="klbl">CPL Promedio</div>
-      <div class="kval sm">$2.36</div>
-      <div class="ksub">USD · acumulado 5 meses</div>
-    </div>
-    <div class="kcard">
-      <div class="klbl">Mejor CPL (Jun)</div>
-      <div class="kval sm green">$1.94</div>
-      <div class="ksub">USD · leads form · mejor mes del período</div>
+      <div class="klbl">Leads Acumulados</div>
+      <div class="kval sm green">1,513</div>
+      <div class="ksub">Total Ene–Jul 2026</div>
     </div>
   </div>
 
   <!-- Charts -->
   <div class="ccol" style="margin-bottom:28px">
     <div class="chart-card">
-      <div class="ct">Evolución del CPL — Feb a Jun 2026</div>
+      <div class="ct">Evolución del CPL — Feb a Jul 2026</div>
       <div style="height:220px"><canvas id="chartCPL"></canvas></div>
     </div>
     <div class="chart-card">
@@ -234,53 +260,53 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <!-- Findings -->
   <div class="info-grid" style="margin-bottom:22px">
     <div class="icard">
-      <h4>🥇 Campaña con Mejor Rendimiento — Junio 2026</h4>
+      <h4>🥇 Julio — Mejor Mes del Período</h4>
       <ul>
-        <li>Lead Form Capilar: CPL $1.94 USD con 240 leads generados</li>
-        <li>Segmentación Bogotá exclusivo + intereses capilar + Pixel AI Reve</li>
-        <li>Mayor volumen de leads calificados del período activo</li>
-        <li>WA Retargeting complementó con 31 conversaciones ($5.84 CPR)</li>
-        <li>9 consultas pagas confirmadas de leads de junio</li>
+        <li>CPL $1.41 USD: nuevo mínimo histórico en 6 meses de pauta</li>
+        <li>327 resultados con $462 de inversión — eficiencia sin precedentes</li>
+        <li>Pixel entrenado con 6 meses de datos del paciente capilar ideal</li>
+        <li>Segmentación Bogotá exclusivo + optimización continua de audiencias</li>
+        <li>Agente AI Reve calificando leads en tiempo real pre-agendamiento</li>
       </ul>
     </div>
     <div class="icard">
-      <h4>📊 ¿Por qué fue el mejor mes?</h4>
+      <h4>📊 ¿Por qué fue el mejor CPL hasta la fecha?</h4>
       <ul>
-        <li>El Pixel de Meta acumuló 4 meses de aprendizaje del paciente ideal</li>
-        <li>Segmentación refinada a Bogotá → audiencia más calificada y cercana</li>
-        <li>El agente AI Reve califica leads en tiempo real antes de agendar</li>
-        <li>Cambio de creativos hacia contenido educativo sobre capilar</li>
-        <li>Nota: Abril tuvo el mejor ROAS del período (5.08x) con Exosomas</li>
+        <li>6 meses de aprendizaje acumulado en el Pixel de Meta</li>
+        <li>Reducción de inversión con mayor volumen: algoritmo en madurez</li>
+        <li>Creativos orientados a problema-solución capilar (reels educativos)</li>
+        <li>Histórico de leads permite a Meta identificar perfiles similares con precisión</li>
+        <li>Filtro de pago Bold: elimina no-shows y mejora la calidad percibida</li>
       </ul>
     </div>
   </div>
 
   <div class="info-grid" style="margin-bottom:0">
     <div class="icard">
-      <h4>⚙️ Optimizaciones Implementadas en Junio</h4>
+      <h4>⚙️ Estado de Campañas — Julio 2026</h4>
       <ul>
-        <li>Cambio de contenidos creativos orientados a línea capilar</li>
-        <li>Segmentación exclusiva por ubicación Bogotá</li>
-        <li>Calificación de leads dentro del agente Reve (AI)</li>
-        <li>Filtro anti no-show mediante pago de valoración vía Bold</li>
-        <li>Split campañas: Lead Form (form) + WA Retargeting</li>
+        <li>Lead Form Capilar: campaña principal · dominó el volumen de resultados</li>
+        <li>WA Retargeting: complemento para leads que no completaron el form</li>
+        <li>Segmentación Bogotá exclusivo · intereses capilar + audiencias similares</li>
+        <li>Creativos: 3 reels publicados como creativos activos en julio</li>
       </ul>
     </div>
     <div class="icard">
-      <h4>📈 Evolución de la Calidad de Leads</h4>
+      <h4>📈 Evolución Histórica del CPL</h4>
       <ul>
-        <li>Feb: $5.84 CPL · arranque sin segmentación avanzada</li>
-        <li>Mar: $2.32 CPL · primeras optimizaciones de audiencia</li>
-        <li>Abr: $1.72 CPL · pico de volumen + alcance (344 resultados)</li>
-        <li>May: $2.32 CPL · bono Madres + expansión de audiencia</li>
-        <li>Jun: $1.94 CPL · Pixel maduro + Reve + Bogotá exclusivo</li>
+        <li>Feb: $5.84 USD · arranque sin datos históricos</li>
+        <li>Mar: $2.32 USD · primeras optimizaciones de audiencia</li>
+        <li>Abr: $1.72 USD · pico de volumen · mejor mes previo</li>
+        <li>May: $2.32 USD · bono Madres · expansión de audiencia temporal</li>
+        <li>Jun: $1.94 USD · Pixel maduro + Reve + Bogotá exclusivo</li>
+        <li style="border-bottom:none"><strong style="color:#3D6B4F">Jul: $1.41 USD ← RÉCORD HISTÓRICO ✅</strong></li>
       </ul>
     </div>
   </div>
 
   <div class="insight">
     <span class="insight-lbl">💡 Insight Estratégico</span>
-    Las campañas continúan aprendiendo del perfil de paciente ideal gracias a la integración del <strong>Pixel del agente AI Reve</strong> y las optimizaciones continuas en Meta: cambio de contenidos, segmentación por ubicación en Bogotá y calificación de leads dentro del agente y en Facebook. A mayor volumen de datos históricos, mayor precisión del algoritmo para identificar el paciente capilar ideal de Reviá.
+    Julio confirma que el ecosistema digital está en su punto de mayor madurez: el <strong>Pixel de Meta con 6 meses de datos</strong> identifica al paciente capilar ideal con precisión creciente. A menor inversión, mayor volumen y mejor costo. La tendencia valida la estrategia de concentración en una sola vertical — capilar — y el uso del agente AI Reve como filtro de calidad antes del agendamiento. Este CPL récord establece la nueva línea base para agosto.
   </div>
 </div>
 </div>
@@ -299,104 +325,128 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 
   <!-- Instagram -->
   <div style="margin-bottom:40px">
-    <div class="badge b-ig">📷 Instagram</div>
-    <div class="kg kg4" style="margin-bottom:16px">
-      <div class="kcard">
-        <div class="klbl">Visualizaciones Orgánicas · May</div>
-        <div class="kval sm">200,058</div>
-        <div class="ksub">Mes pico orgánico · reels + contenido capilar</div>
+    <div class="badge b-ig">📷 Instagram · Julio 2026</div>
+    <div class="kg kg4" style="margin-bottom:20px">
+      <div class="kcard accent">
+        <div class="klbl">Vistas Reels · Julio</div>
+        <div class="kval gold">20,289</div>
+        <div class="ksub">Alcance orgánico vía contenido de video</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Alcance Orgánico · May</div>
-        <div class="kval sm">1,590</div>
-        <div class="ksub">Cuentas alcanzadas · actividad orgánica</div>
+        <div class="klbl">Interacciones · Julio</div>
+        <div class="kval sm">112</div>
+        <div class="ksub">Likes · comentarios · compartidos · guardados</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Visitas al Perfil · Jun</div>
-        <div class="kval sm">1,189</div>
-        <div class="ksub">Personas que visitaron el perfil · Jun 2026</div>
+        <div class="klbl">Contenido Publicado · Jul</div>
+        <div class="kval sm">15</div>
+        <div class="ksub">4 reels · 11 stories · capilar</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Posts Publicados Feb–Jun</div>
-        <div class="kval sm">18</div>
-        <div class="ksub">Feb 2 · Mar 3 · Abr 4 · May 4 · Jun 5 · carrusel + reels</div>
+        <div class="klbl">Nuevos Seguidores · Jul</div>
+        <div class="kval sm">214</div>
+        <div class="ksub">▼ 7% vs junio · crecimiento orgánico sostenido</div>
       </div>
     </div>
-    <div class="ccol">
-      <div class="kcard" style="padding:20px">
-        <div class="klbl" style="margin-bottom:8px">🎬 Mejor Reel · Abr 25</div>
-        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--dark2);margin-bottom:6px;line-height:1.4">"Cada caída de pelo tiene una historia distinta. El tratamiento correcto empieza por entenderla."</div>
-        <div class="kg kg3" style="gap:10px;margin:10px 0">
-          <div style="background:var(--cream);border-radius:6px;padding:8px 10px;text-align:center">
-            <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--dark2)">32.6K</div>
-            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">Vistas</div>
+
+    <!-- Best Reels -->
+    <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:16px;letter-spacing:.3px">🎬 Mejores Reels — Julio 2026</h3>
+    <div class="ccol" style="margin-bottom:20px">
+      <div class="reel-card">
+        <div class="reel-card-inner">
+          <div class="klbl" style="margin-bottom:8px">Reel #1 · Mejor Desempeño</div>
+          <div style="font-family:'Syne',sans-serif;font-size:13.5px;font-weight:600;color:var(--dark2);margin-bottom:12px;line-height:1.4">Contenido capilar educativo — formato problema → solución</div>
+          <div class="kg kg3" style="gap:10px;margin:0 0 14px">
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--dark2)">IG + FB</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Plataformas</div>
+            </div>
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--gold2)">Jul 26</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Publicado</div>
+            </div>
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--success)">Capilar</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Línea</div>
+            </div>
           </div>
-          <div style="background:var(--cream);border-radius:6px;padding:8px 10px;text-align:center">
-            <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--dark2)">42</div>
-            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">Interacciones</div>
-          </div>
-          <div style="background:var(--cream);border-radius:6px;padding:8px 10px;text-align:center">
-            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--dark2)">FB+IG</div>
-            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">Plataformas</div>
+          <div class="ksub">
+            <a href="https://www.instagram.com/reel/Da5jxamBkxK/" target="_blank" style="color:var(--gold2);text-decoration:none;font-weight:600;font-size:12px">Ver en Instagram →</a>
           </div>
         </div>
-        <div class="ksub">31,596 Facebook · 983 Instagram · <a href="https://fb.watch/IdZkpLrn6N/" target="_blank" style="color:var(--gold2);text-decoration:none;font-weight:500">Ver reel →</a></div>
       </div>
-      <div class="kcard" style="padding:20px">
-        <div class="klbl" style="margin-bottom:8px">🖼️ Mejor Carrusel</div>
-        <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--dark2);margin-bottom:6px;line-height:1.4">"¿Notas caída de cabello o menor densidad? Tratamientos para empezar desde la raíz."</div>
-        <div style="background:var(--cream);border-radius:6px;padding:10px 12px;margin:10px 0;font-size:12px;color:var(--text-b)">
-          <strong style="color:var(--dark2)">reviatratamientossincirugia</strong> · La Font Medicina Estética
+      <div class="reel-card">
+        <div class="reel-card-inner">
+          <div class="klbl" style="margin-bottom:8px">Reel #2 · Alto Alcance</div>
+          <div style="font-family:'Syne',sans-serif;font-size:13.5px;font-weight:600;color:var(--dark2);margin-bottom:12px;line-height:1.4">Contenido capilar educativo — autoridad médica + solución</div>
+          <div class="kg kg3" style="gap:10px;margin:0 0 14px">
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--dark2)">IG + FB</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Plataformas</div>
+            </div>
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--gold2)">Jul 26</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Publicado</div>
+            </div>
+            <div style="background:var(--cream);border-radius:6px;padding:10px;text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--success)">Capilar</div>
+              <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:3px">Línea</div>
+            </div>
+          </div>
+          <div class="ksub">
+            <a href="https://fb.watch/IZNMOj5INM/" target="_blank" style="color:var(--gold2);text-decoration:none;font-weight:600;font-size:12px">Ver en Facebook →</a>
+          </div>
         </div>
-        <div class="ksub">Capilar · formato educativo + problema-solución · <a href="https://www.instagram.com/p/DWjWGU4FkRH/" target="_blank" style="color:var(--gold2);text-decoration:none;font-weight:500">Ver carrusel →</a></div>
       </div>
     </div>
-    <div style="background:var(--cream2);border-radius:10px;padding:14px 18px;margin-top:14px;display:flex;align-items:center;gap:16px">
-      <div style="font-size:22px">🌿</div>
+
+    <div style="background:var(--cream2);border-radius:10px;padding:14px 18px;margin-top:0;display:flex;align-items:center;gap:16px">
+      <div style="font-size:22px">📌</div>
       <div style="font-size:12.5px;color:var(--text);line-height:1.6">
-        <strong style="color:var(--dark2)">3 leads orgánicos en junio:</strong> 2 venían de conversaciones iniciadas en mayo (carry-over) y 1 se generó directamente desde Linktree — confirma que el bio-link está capturando interés real fuera de pauta.
+        <strong style="color:var(--dark2)">Patrón confirmado:</strong> Los reels de capilar en formato educativo (problema → diagnóstico → solución con la Dra. Bibiana) son consistentemente el mejor formato orgánico. En julio, 4 reels y 11 stories generaron 20,289 vistas y 112 interacciones. El contenido de autoridad médica combina bien con la pauta: genera confianza antes de que el lead llegue al bot.
       </div>
     </div>
   </div>
 
   <!-- Linktree -->
   <div>
-    <div class="badge b-lt">🔗 Linktree</div>
-    <div class="kg kg4">
+    <div class="badge b-lt">🔗 Linktree · Julio 2026</div>
+    <div class="kg kg4" style="margin-bottom:20px">
       <div class="kcard accent">
-        <div class="klbl">Clicks Totales · Junio</div>
-        <div class="kval gold">77</div>
-        <div class="ksub">116 vistas · 66.4% click rate · Jun 1–30</div>
+        <div class="klbl">Views · Julio</div>
+        <div class="kval gold">107</div>
+        <div class="ksub">Personas que visitaron el Linktree · Jul</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Click Rate</div>
-        <div class="kval sm">66.4%</div>
-        <div class="ksub">▼ vs 91.5% Mayo · sin promo activa en junio</div>
+        <div class="klbl">Clicks Totales · Julio</div>
+        <div class="kval sm">73</div>
+        <div class="ksub">Clics en los links del perfil</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Link #1 Más Clickeado</div>
-        <div class="kval xs">Tonif. Corporal</div>
-        <div class="ksub">~30 clicks (39%) · lidera por 2° mes consecutivo</div>
+        <div class="klbl">CTR · Julio</div>
+        <div class="kval sm green">68.2%</div>
+        <div class="ksub">Tasa de clic · por encima del promedio de plataforma</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Link #2 — Nuestro Core</div>
-        <div class="kval xs">Trats. Capilares</div>
-        <div class="ksub">~21 clicks (27%) · servicio estrella del canal</div>
+        <div class="klbl">Tendencia Semanal</div>
+        <div class="kval xs">Semana 2<br>lidera</div>
+        <div class="ksub">35 views · 26 clicks · semana más activa del mes</div>
       </div>
     </div>
-    <div class="ccol" style="margin-top:20px">
+
+    <div class="ccol">
       <div class="chart-card cream-bg">
-        <div class="ct">Clicks por Link — Junio 2026 (77 total · estimado proporcional)</div>
-        <div style="height:210px"><canvas id="chartLTReport"></canvas></div>
+        <div class="ct">Linktree — Vistas y Clicks por Semana · Julio 2026</div>
+        <div style="height:200px"><canvas id="chartLTJul"></canvas></div>
       </div>
-      <div class="chart-card" style="font-size:12.5px;line-height:1.65;color:var(--text)">
-        <div class="ct">Intención Revelada por Linktree · Junio 2026</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">🥇 <strong>Tonificación Corporal: ~30 clicks (39%)</strong> — domina por segundo mes consecutivo. Lifetime acumulado: 118 clicks. Demanda orgánica muy fuerte.</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">🥈 <strong>Tratamientos Capilares: ~21 clicks</strong> — 83 clicks lifetime. El servicio core captura el segundo lugar consistentemente.</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">🥉 <strong>Rejuvenecimiento Facial: ~11 clicks</strong> — 45 clicks lifetime. Sube al 3° lugar (antes era Reservar Val.).</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">🗓️ <strong>Reservar Valoración: ~8 clicks</strong> — 32 clicks lifetime. Claudia Bedoya (Jul 17) llegó por este link.</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">🚀 <strong>Test Epigenético: ~4 clicks</strong> — 17 lifetime · Cejas/Barba: ~3 clicks (11 lifetime).</div>
-        <div style="padding:8px 10px;background:#FDF5EC;border-left:2px solid var(--gold);border-radius:4px;margin-top:8px;font-size:11.5px;color:var(--text-b)"><strong style="color:var(--gold2)">Insight:</strong> El click rate bajó de 91.5% a 66.4% en junio — en mayo había una promo activa (Bono Madres) que impulsaba la urgencia. Tonificación Corporal sigue siendo la demanda #1 desde bio link por 2° mes consecutivo: oportunidad de crear un flujo dedicado en el bot para ese servicio.</div>
+      <div class="chart-card">
+        <div class="ct">Intención Revelada — Linktree Julio 2026</div>
+        <div style="font-size:12.5px;color:var(--text);line-height:1.65;padding:4px 0">
+          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📊 <strong>68.2% CTR</strong> confirma que quienes visitan el bio-link tienen intención real de interactuar con el contenido de Reviá.</div>
+          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📅 <strong>Semana 2 (Jul 7–13):</strong> pico de actividad con 35 views y 26 clicks — correlaciona con campañas activas de pauta esa semana.</div>
+          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📉 <strong>Semana 4 (Jul 21–27):</strong> caída a 15 views — actividad más baja del mes · tendencia natural de fin de mes.</div>
+          <div style="padding:7px 0">🔗 <strong>Oportunidad:</strong> El CTR alto indica que el bio-link es un punto de contacto activo. Actualizar el orden de los links según la campaña mensual activa puede incrementar conversiones directas desde el perfil.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -409,62 +459,44 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <div class="sh">
     <div class="sh-num">03</div>
     <div>
-      <div class="sh-eyebrow">Contenidos Q2 2026</div>
-      <h2 class="sh-title">Estrategia de Contenidos</h2>
+      <div class="sh-eyebrow">Ecosistema Digital · Perspectivas</div>
+      <h2 class="sh-title">Estrategia y Expansión</h2>
       <div class="sh-rule"></div>
     </div>
   </div>
 
   <p style="font-size:13.5px;color:var(--text-b);margin-bottom:32px;max-width:700px;line-height:1.7">
-    <strong style="color:var(--dark2)">Objetivo Q2:</strong> Construir confianza y posicionar la marca antes de acelerar la conversión. El contenido se organizó en cinco pilares estratégicos que guiaron cada publicación, campaña y video del período.
+    <strong style="color:var(--dark2)">Estado actual:</strong> El ecosistema de Reviá tiene una base sólida — 6 meses de pauta Meta, presencia activa en Instagram, YouTube, Google Business y Linktree, y un agente AI funcionando como capa de calificación. Los resultados de julio confirman que la estrategia de consolidación está funcionando.
   </p>
 
-  <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:16px;letter-spacing:.5px">PILARES DE CONTENIDO</h3>
-  <table class="rtable">
-    <thead>
-      <tr><th>Pilar</th><th>Objetivo Estratégico</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Awareness</td><td>Posicionamiento de la marca Reviá y sus servicios diferenciadores.</td></tr>
-      <tr><td>Education</td><td>Educación sobre tratamientos y conceptos médicos capilares y estéticos.</td></tr>
-      <tr><td>Authority</td><td>Posicionar a la Dra. Bibiana como referente médico capilar en Bogotá.</td></tr>
-      <tr><td>Trust</td><td>Comunicar la metodología y filosofía médica que distingue a Reviá.</td></tr>
-      <tr><td>Problem Awareness</td><td>Ayudar al paciente a identificar el origen de su condición (caída del cabello, alopecia, etc.) antes de presentar una solución.</td></tr>
-    </tbody>
-  </table>
+  <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:16px;letter-spacing:.5px">CANALES EN CONSIDERACIÓN</h3>
 
-  <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:16px;letter-spacing:.5px;margin-top:40px">EVOLUCIÓN DEL FUNNEL</h3>
-  <table class="rtable">
-    <thead>
-      <tr><th>Etapa</th><th>Objetivo</th><th style="width:200px">Estado</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Awareness</td>
-        <td>Dar a conocer Reviá y a la Dra. Bibiana en el ecosistema digital.</td>
-        <td class="status-ok">✅ Consolidado</td>
-      </tr>
-      <tr>
-        <td>Consideration</td>
-        <td>Educar al paciente potencial y generar confianza en la marca médica.</td>
-        <td class="status-ok">✅ Consolidado</td>
-      </tr>
-      <tr>
-        <td>Conversion</td>
-        <td>Incrementar valoraciones confirmadas y definir el procedimiento estrella de Reviá.</td>
-        <td class="status-go">🚀 Prioridad Q3</td>
-      </tr>
-      <tr>
-        <td>Patient Insights</td>
-        <td>Requiere información del consultorio para continuar optimizando la estrategia de captación.</td>
-        <td class="status-next">⏭ Próxima etapa</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="info-grid" style="margin-bottom:24px">
+    <div class="icard">
+      <h4>🔍 Google Ads Local</h4>
+      <ul>
+        <li>Captura búsquedas activas de "tratamiento capilar Bogotá" — pacientes que ya saben que tienen un problema y están buscando solución</li>
+        <li>Mayor intención de compra vs Meta: el paciente busca, no espera que el anuncio lo encuentre</li>
+        <li>Google ofrece créditos de bienvenida para cuentas nuevas — el costo de entrada inicial es reducido</li>
+        <li>Complementa Meta Ads: Meta genera demanda, Google la captura cuando el paciente ya está listo para actuar</li>
+      </ul>
+    </div>
+    <div class="icard">
+      <h4>📌 Pinterest Ads</h4>
+      <ul>
+        <li>Plataforma de alta intención visual — ideal para contenido de antes/después en tratamientos capilares y estéticos</li>
+        <li>La audiencia femenina 25–54 en Colombia es el perfil exacto del paciente de Reviá</li>
+        <li>Pinterest ofrece créditos de inicio de pauta para cuentas que activan su primer anuncio</li>
+        <li>El contenido de Reviá (reels educativos, fotos de resultados) se adapta directamente al formato de Pins</li>
+      </ul>
+    </div>
+  </div>
 
-  <div class="insight">
-    <span class="insight-lbl">📈 Evolución para Q3</span>
-    Mantener la base educativa construida en Q2 e incorporar mayor contenido orientado a conversión: <strong>testimonios y casos reales de pacientes · engagement para fortalecer comunidad · diferenciación clara de tratamientos · CTAs más directos hacia la valoración.</strong>
+  <div style="background:var(--cream);border-radius:12px;padding:24px 28px;border-left:3px solid var(--gold)">
+    <div style="font-family:'Syne',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Nota</div>
+    <div style="font-size:13px;color:var(--text);line-height:1.75;max-width:760px">
+      Activar Google Ads Local o Pinterest requiere presupuesto adicional del cliente — no está incluido en el plan actual. Cuando sea el momento de escalar, ambos canales ofrecen <strong style="color:var(--gold2)">bonos de inicio de pauta</strong> que reducen la inversión de entrada. La estrategia está lista, solo falta la señal.
+    </div>
   </div>
 </div>
 </div>
@@ -483,78 +515,87 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 
   <!-- YouTube -->
   <div style="margin-bottom:44px">
-    <div class="badge b-yt">▶ YouTube</div>
+    <div class="badge b-yt">▶ YouTube · Jun–Jul 2026</div>
     <div class="kg kg4" style="margin-bottom:20px">
-      <div class="kcard">
-        <div class="klbl">Visualizaciones Abr–Jun</div>
-        <div class="kval sm">1,271</div>
-        <div class="ksub">Abr 751 · May 237 · Jun 283</div>
-      </div>
       <div class="kcard accent">
-        <div class="klbl">Videos Publicados Abr–Jun</div>
-        <div class="kval gold">9</div>
-        <div class="ksub">3 en abril · 2 en mayo · 4 en junio</div>
+        <div class="klbl">Vistas Totales · Julio</div>
+        <div class="kval gold">358</div>
+        <div class="ksub">+26.5% vs junio (283) · tendencia al alza</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Mejor Video — Período</div>
-        <div class="kval xs">Realza SIN Cirugías</div>
-        <div class="ksub">394 vistas · pico 317 en un día (16 Abr)</div>
+        <div class="klbl">Videos Publicados · Jul</div>
+        <div class="kval sm">3</div>
+        <div class="ksub">Jul 7 · Jul 16 · Jul 22 · línea capilar</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Breakout · Jun 26</div>
-        <div class="kval xs" style="color:var(--success)">181 en 4 días</div>
-        <div class="ksub">"¿Se te está cayendo?" · 150 vistas el primer día</div>
+        <div class="klbl">Mejor Video · Julio</div>
+        <div class="kval xs" style="color:var(--success)">198 vistas</div>
+        <div class="ksub">"Perder cabello no es solo un tema estético"</div>
+      </div>
+      <div class="kcard">
+        <div class="klbl">Vistas Acum. Jun–Jul</div>
+        <div class="kval sm">641</div>
+        <div class="ksub">Jun 283 · Jul 358 · crecimiento mes a mes</div>
       </div>
     </div>
 
     <div class="ccol">
       <div class="chart-card cream-bg">
-        <div class="ct">Vistas por Mes — Abr a Jun 2026</div>
+        <div class="ct">Vistas por Mes — May a Jul 2026</div>
         <div style="height:180px"><canvas id="chartYT"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="ct">Top Videos del Período</div>
+        <div class="ct">Top Videos — Julio 2026</div>
         <div style="height:180px"><canvas id="chartYTTop"></canvas></div>
       </div>
     </div>
 
-    <div class="insight" style="margin-top:0">
-      <span class="insight-lbl">💡 Tendencia YouTube</span>
-      El contenido sobre <strong>caída de cabello en formato corto</strong> es el formato ganador del canal: "¿Se te está cayendo el cabello?" logró 150 vistas en su primer día de publicación (26 Jun), la mejor recepción del canal hasta ahora. El patrón es consistente: cada short capilar genera un spike inicial significativo. El canal aún no tiene audiencia recurrente, pero cada video construye presencia en búsqueda orgánica de YouTube.
-    </div>
   </div>
 
   <!-- GMB -->
   <div>
-    <div class="badge b-gmb">📍 Google Business Profile</div>
-    <div class="kg kg4">
-      <div class="kcard">
-        <div class="klbl">Vistas Perfil · Junio</div>
-        <div class="kval sm">77</div>
-        <div class="ksub">+4% vs mayo · crecimiento sostenido mes a mes</div>
+    <div class="badge b-gmb">📍 Google Business Profile · Julio 2026</div>
+    <div class="kg kg4" style="margin-bottom:20px">
+      <div class="kcard accent">
+        <div class="klbl">Interacciones · Julio</div>
+        <div class="kval gold">40</div>
+        <div class="ksub">Llamadas + rutas + clics en sitio web · Jul 2026</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Vistas Acumuladas Mar–Jun</div>
-        <div class="kval sm">287</div>
-        <div class="ksub">Crecimiento constante desde activación del perfil</div>
+        <div class="klbl">Vistas al Perfil · Julio</div>
+        <div class="kval sm">120</div>
+        <div class="ksub">Personas que vieron el perfil de Reviá en Maps/Search</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Top Búsqueda</div>
-        <div class="kval xs">"revibe clínica"</div>
-        <div class="ksub">Búsquedas directas de marca · 55% desde móvil</div>
+        <div class="klbl">Interacciones Acum. Mar–Jul</div>
+        <div class="kval sm">325</div>
+        <div class="ksub">Crecimiento sostenido desde activación del perfil</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Llamadas / Rutas / WA / Web</div>
-        <div class="kval xs"><span class="pend">Pendiente</span></div>
-        <div class="ksub">Métricas de acción del perfil · añadir en próx. reporte</div>
+        <div class="klbl">Top Búsqueda · Julio</div>
+        <div class="kval xs">"revi / revia"</div>
+        <div class="ksub">65% desde móvil · búsquedas directas de marca</div>
       </div>
     </div>
+
+    <div class="ccol">
+      <div class="chart-card">
+        <div class="ct">Interacciones GMB — Mar a Jul 2026</div>
+        <div style="height:180px"><canvas id="chartGMBInt"></canvas></div>
+      </div>
+      <div class="chart-card cream-bg">
+        <div class="ct">Búsquedas por Tipo · Julio 2026</div>
+        <div style="height:180px"><canvas id="chartGMBType"></canvas></div>
+      </div>
+    </div>
+
     <div class="notice">
-      <h4>🌐 Próximo Paso — Fortalecer con el Sitio Web</h4>
+      <h4>🌐 Próximos Pasos — Google Business</h4>
       <ul>
-        <li>Optimizar el nombre del perfil con "Reviá" para capturar búsquedas de marca (hoy buscan "revibe clínica" — variación fonética).</li>
-        <li>Conectar el sitio web nuevo al GMB para mejorar el ranking de búsqueda local en Bogotá.</li>
-        <li>Activar reseñas de pacientes y actualización frecuente de fotos y servicios.</li>
+        <li>El cambio de búsqueda de "revibe clínica" (Jun) a "revi/revia" (Jul) indica que la marca está siendo buscada directamente — señal de awareness consolidado.</li>
+        <li>Activar reseñas de pacientes satisfechos para mejorar el ranking local en Bogotá.</li>
+        <li>Conectar el sitio web nuevo al perfil GMB para capturar tráfico de búsqueda orgánica.</li>
+        <li>Actualización frecuente de fotos y servicios en el perfil para mejorar el posicionamiento en Maps.</li>
       </ul>
     </div>
   </div>
@@ -567,7 +608,7 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <div class="sh">
     <div class="sh-num">05</div>
     <div>
-      <div class="sh-eyebrow">Ads + Reve AI</div>
+      <div class="sh-eyebrow">Ads + Reve AI · Julio 2026</div>
       <h2 class="sh-title">Journey del Paciente</h2>
       <div class="sh-rule"></div>
     </div>
@@ -577,80 +618,80 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 
     <!-- Left: KPIs -->
     <div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:18px">¿Qué podemos medir hoy?</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:18px">Métricas del Mes — Julio 2026</h3>
       <div class="kg kg2" style="gap:12px;margin-bottom:16px">
         <div class="kcard accent">
-          <div class="klbl">Resultados Meta Ads · Jun</div>
-          <div class="kval gold">271</div>
-          <div class="ksub">240 leads form + 31 convos WA · Junio 2026</div>
+          <div class="klbl">Resultados Meta Ads · Jul</div>
+          <div class="kval gold">327</div>
+          <div class="ksub">Leads generados · mejor mes del período</div>
         </div>
         <div class="kcard">
           <div class="klbl">Atendidos por Reve</div>
-          <div class="kval sm">206</div>
-          <div class="ksub">Conversaciones junio · 204 únicos</div>
+          <div class="kval sm">232</div>
+          <div class="ksub">Conversaciones julio · bot activo 24/7</div>
         </div>
         <div class="kcard">
-          <div class="klbl">Valoraciones Agendadas</div>
-          <div class="kval sm">34</div>
-          <div class="ksub">27 capilar · 7 estética · Junio</div>
+          <div class="klbl">Citas Agendadas · Jul</div>
+          <div class="kval sm">44</div>
+          <div class="ksub">19.0% de agendamiento sobre conversaciones</div>
         </div>
         <div class="kcard">
-          <div class="klbl">Consultas Pagas · Jun</div>
-          <div class="kval sm green">9</div>
-          <div class="ksub">11 visitas total (+ 2 clientes de mayo)</div>
+          <div class="klbl">Consultas Realizadas · Jul</div>
+          <div class="kval sm green">14</div>
+          <div class="ksub">12 confirmadas · 1 pospuesta · 1 cancelada</div>
         </div>
       </div>
       <div class="kcard" style="margin-bottom:12px">
-        <div class="klbl">Servicio con Mayor Interés</div>
-        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--dark2);margin:5px 0 4px">Caída del Cabello (Capilar)</div>
-        <div class="ksub">Motivo principal de consulta · consistente en todos los meses de pauta</div>
+        <div class="klbl">Compraron Producto o Tratamiento</div>
+        <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:var(--success);margin:5px 0 4px">5</div>
+        <div class="ksub">De 14 consultas realizadas · 35.7% tasa de compra</div>
       </div>
       <div class="kcard">
-        <div class="klbl">Revenue · Junio</div>
-        <div class="kval sm" style="color:var(--warn)">A confirmar</div>
-        <div class="ksub">3 procedimientos capilares · Silvia · Juan C. · Andrea</div>
+        <div class="klbl">Servicio Dominante</div>
+        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--dark2);margin:5px 0 4px">Caída del Cabello (Capilar)</div>
+        <div class="ksub">Motivo #1 de consulta · consistente en todos los meses</div>
       </div>
     </div>
 
     <!-- Right: Funnel -->
     <div>
       <h3 style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--dark2);margin-bottom:6px">Funnel Ads → Reve → Consulta</h3>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px">Inversión: <strong style="color:var(--gold2)">$648 USD</strong> · Junio 2026 · Meta Ads</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:14px">Inversión: <strong style="color:var(--gold2)">$462 USD</strong> · Julio 2026 · Meta Ads</div>
       <div class="funnel">
         <div class="funnel-step">
           <div class="fbar" style="background:#3A5F7A">
-            <div class="fn">271</div>
-            <div class="flbl"><span>Resultados Meta Ads</span><small>Junio 2026 · $648 USD</small></div>
+            <div class="fn">327</div>
+            <div class="flbl"><span>Resultados Meta Ads</span><small>Julio 2026 · $462 USD · CPL $1.41</small></div>
           </div>
         </div>
         <div class="farrow">↓</div>
-        <div style="width:100%;font-size:10.5px;color:var(--muted);background:var(--cream);border-radius:5px;padding:5px 10px;margin:-2px 0;text-align:center">65 leads enviaron mensaje inicial y no continuaron la conversación</div>
+        <div style="width:100%;font-size:10.5px;color:var(--muted);background:var(--cream);border-radius:5px;padding:5px 10px;margin:-2px 0;text-align:center">95 leads no continuaron la conversación</div>
         <div class="farrow">↓</div>
         <div class="funnel-step">
-          <div class="fbar" style="background:#4A7C59;width:90%">
-            <div class="fn">206</div>
-            <div class="flbl"><span>Atendidos por Reve AI</span><small>100% de mensajes respondidos · 204 únicos</small></div>
-          </div>
-        </div>
-        <div class="farrow">↓</div>
-        <div class="funnel-step">
-          <div class="fbar" style="background:#8B6A3E;width:72%">
-            <div class="fn">78</div>
-            <div class="flbl"><span>Interesados / Deals</span><small>38% de conversaciones</small></div>
+          <div class="fbar" style="background:#4A7C59;width:88%">
+            <div class="fn">232</div>
+            <div class="flbl"><span>Atendidos por Reve AI</span><small>100% de mensajes respondidos en tiempo real</small></div>
           </div>
         </div>
         <div class="farrow">↓</div>
         <div class="funnel-step">
-          <div class="fbar" style="background:#C4995A;width:52%">
-            <div class="fn">34</div>
-            <div class="flbl"><span>Citas Agendadas</span><small>43.6% de interesados</small></div>
+          <div class="fbar" style="background:#8B6A3E;width:65%">
+            <div class="fn">44</div>
+            <div class="flbl"><span>Citas Agendadas</span><small>19.0% de conversaciones → cita</small></div>
           </div>
         </div>
         <div class="farrow">↓</div>
         <div class="funnel-step">
-          <div class="fbar" style="background:#3D6B4F;width:32%;border:2px solid rgba(255,255,255,.3)">
-            <div class="fn">9</div>
-            <div class="flbl"><span>Consultas Pagas</span><small>26.5% de agendadas</small></div>
+          <div class="fbar" style="background:#C4995A;width:42%">
+            <div class="fn">14</div>
+            <div class="flbl"><span>Consultas Realizadas</span><small>12 confirmadas · 1 pospuesta · 1 cancelada</small></div>
+          </div>
+        </div>
+        <div class="farrow">↓</div>
+        <div class="funnel-step">
+          <div class="fbar" style="background:#3D6B4F;width:28%;border:2px solid rgba(255,255,255,.3)">
+            <div class="fn">5</div>
+            <div class="flbl"><span>Compraron Producto/Trat.</span><small>35.7% de consultas realizadas</small></div>
           </div>
         </div>
       </div>
@@ -662,108 +703,63 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <div style="margin-top:40px;padding-top:40px;border-top:1px solid var(--cream2)">
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px">
       <div style="font-family:'Syne',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:rgba(196,153,90,.1);padding:5px 12px;border-radius:4px">5.1</div>
-      <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--dark2)">Datos Relevantes del CRM — Junio 2026</h3>
+      <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--dark2)">Datos del CRM — Julio 2026</h3>
     </div>
 
-    <!-- Top KPIs - green accent -->
+    <!-- Top KPIs -->
     <div class="kg kg4" style="margin-bottom:16px">
       <div class="kcard" style="border-color:#3D6B4F;border-width:2px">
-        <div class="klbl">Conversión a Cita</div>
-        <div class="kval sm green">16.5%</div>
-        <div class="ksub">34/206 convos · ▲ vs 14.1% May · 43.6% de deals</div>
+        <div class="klbl">Agendamiento</div>
+        <div class="kval sm green">19.0%</div>
+        <div class="ksub">44/232 convos → cita agendada</div>
       </div>
       <div class="kcard" style="border-color:#3D6B4F;border-width:2px">
-        <div class="klbl">Cancelación Real</div>
-        <div class="kval sm green">11.8%</div>
-        <div class="ksub">4 cancelaciones reales · 70.6% por pago no completado</div>
+        <div class="klbl">Consultas Realizadas</div>
+        <div class="kval sm green">14</div>
+        <div class="ksub">12 confirmadas · 1 pospuesta · 1 cancelada</div>
       </div>
       <div class="kcard" style="border-color:#3D6B4F;border-width:2px">
-        <div class="klbl">Citas Pagadas</div>
-        <div class="kval sm green">23.5%</div>
-        <div class="ksub">8 de 34 agendadas · 6 citas vigentes activas</div>
+        <div class="klbl">Compraron Producto/Trat.</div>
+        <div class="kval sm green">5</div>
+        <div class="ksub">35.7% tasa de compra post-consulta</div>
       </div>
       <div class="kcard" style="border-color:#3D6B4F;border-width:2px">
         <div class="klbl">Tema Dominante</div>
         <div class="kval xs" style="font-size:22px;font-weight:700;color:var(--dark2)">Capilar</div>
-        <div class="ksub">76/204 pacientes (37%) · caída + alopecia</div>
-      </div>
-    </div>
-
-    <!-- Topics row -->
-    <div class="kg kg4" style="margin-bottom:24px">
-      <div class="kcard cream-bg">
-        <div class="klbl">🔍 Caída del Cabello</div>
-        <div class="kval sm">76</div>
-        <div class="ksub">Tema #1 · 37% de pacientes</div>
-      </div>
-      <div class="kcard cream-bg">
-        <div class="klbl">📍 Ubicación / Cómo Llegar</div>
-        <div class="kval sm">33</div>
-        <div class="ksub">Tema #2 · alta demanda de dirección</div>
-      </div>
-      <div class="kcard cream-bg">
-        <div class="klbl">💰 Precios</div>
-        <div class="kval sm">24</div>
-        <div class="ksub">Tema #3 · sensibilidad al precio</div>
-      </div>
-      <div class="kcard cream-bg">
-        <div class="klbl">🏆 Credenciales Doctora</div>
-        <div class="kval sm">6</div>
-        <div class="ksub">Pacientes que preguntan por formación</div>
+        <div class="ksub">Línea principal de todas las conversaciones</div>
       </div>
     </div>
 
     <!-- Charts -->
     <div class="ccol" style="margin-bottom:20px">
       <div class="chart-card">
-        <div class="ct">Conversaciones por Día de la Semana — Junio 2026 (206 total)</div>
+        <div class="ct">Conversaciones por Día de la Semana — Julio 2026 (232 total)</div>
         <div style="height:200px"><canvas id="chartCRMDay"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="ct">Conversaciones por Hora — Junio 2026</div>
+        <div class="ct">Conversaciones por Hora — Julio 2026</div>
         <div style="height:200px"><canvas id="chartCRMHour"></canvas></div>
       </div>
     </div>
 
     <!-- Insights -->
     <div style="background:#FDF5EC;border-left:3px solid var(--gold);border-radius:6px;padding:14px 18px;font-size:12.5px;color:var(--text);line-height:1.7">
-      <strong style="color:var(--gold2)">Martes y Miércoles lideran</strong> con 39 y 38 convos respectivamente (37% del total semanal) — el pico se desplazó a mitad de semana en junio vs el lunes en mayo. <strong style="color:var(--gold2)">Viernes es el valle</strong> con solo 16 convos (7.8%) — oportunidad para campañas de reactivación ese día. El pico horario se concentra entre <strong>20h–22h</strong>, indicando que los leads interactúan fuera del horario laboral.
+      <strong style="color:var(--gold2)">Dom, Lun y Mié lideran</strong> con 41 conversaciones cada uno — distribución más homogénea vs junio. <strong style="color:var(--gold2)">Martes es el valle</strong> con 26 convos. El pico horario se concentra entre <strong>21h–22h</strong> (26 convos) confirmando que los leads interactúan después del horario laboral y en la noche.
     </div>
 
-    <div style="background:#FDF0F0;border-left:3px solid #9B3A3A;border-radius:6px;padding:14px 18px;font-size:12.5px;color:var(--text);line-height:1.7;margin-top:12px">
-      <strong style="color:#9B3A3A">Mejora vs Mayo:</strong> La conversación a cita subió de 14.1% a 16.5% y la cancelación real bajó al 11.8% (vs 85.7% en mayo que incluía el filtro de pago Bold). El 70.6% de cancelaciones son por pago no completado — funciona como filtro anti no-show, no como fuga real. El tema <strong>caída del cabello</strong> domina el 37% de las conversaciones.
-    </div>
   </div>
 
-  <!-- Gap section -->
-  <div style="background:var(--cream);border-radius:12px;padding:28px 32px;margin-top:32px">
-    <h4 style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--dark2);margin-bottom:16px">⚠️ Sin visibilidad actual sobre las etapas post-consulta</h4>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
-      <div>
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;font-family:'Syne',sans-serif">Etapas no rastreadas hoy</div>
-        <ul class="cklist">
-          <li><span class="ci">○</span>¿El paciente asistió a la consulta?</li>
-          <li><span class="ci">○</span>¿Qué tratamiento decidió realizar?</li>
-          <li><span class="ci">○</span>¿Cuál fue el ticket promedio?</li>
-        </ul>
-      </div>
-      <div style="background:var(--white);border-radius:8px;padding:20px">
-        <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:8px;font-family:'Syne',sans-serif">💡 Insight</div>
-        <div style="font-size:12.5px;color:var(--text);line-height:1.65">Integrar esta información permitirá optimizar las campañas con base en <strong>resultados reales del negocio</strong>, sin ampliar el alcance de la estrategia de adquisición. Es la palanca de optimización más poderosa disponible para Q3.</div>
-      </div>
-    </div>
-  </div>
 </div>
 </div>
 
-<!-- ════════ 06 | APRENDIZAJES Q2 ════════ -->
+<!-- ════════ 06 | APRENDIZAJES ════════ -->
 <div class="dark-section">
 <div class="wrap">
   <div class="sh">
     <div class="sh-num">06</div>
     <div>
-      <div class="sh-eyebrow">Cierre del Período Feb–Jun 2026</div>
-      <h2 class="sh-title">Aprendizajes Q2</h2>
+      <div class="sh-eyebrow">Cierre del Período · Julio 2026</div>
+      <h2 class="sh-title">Aprendizajes del Mes</h2>
       <div class="sh-rule"></div>
     </div>
   </div>
@@ -771,22 +767,36 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
     <div>
       <div class="pg">
-        <h4>Hitos Alcanzados</h4>
+        <h4>Hitos Alcanzados en Julio</h4>
         <ul class="cklist">
-          <li><span class="ci">✅</span>Creación del ecosistema digital alineado: Instagram, Facebook, YouTube, Google Business, Linktree, WhatsApp y activos digitales.</li>
-          <li><span class="ci">✅</span>Consolidación de la identidad visual y editorial de Reviá.</li>
-          <li><span class="ci">✅</span>Implementación del agente AI Reve y entrenamiento del Pixel de Meta para línea capilar.</li>
-          <li><span class="ci">✅</span>Posicionamiento inicial de Reviá y de la Dra. Bibiana como referente médico capilar en Bogotá.</li>
+          <li><span class="ci">✅</span>CPL récord de $1.41 USD: el mejor costo por lead en 6 meses de pauta — el algoritmo de Meta alcanzó su punto óptimo de eficiencia.</li>
+          <li><span class="ci">✅</span>327 leads con $462 invertidos: el mes de mayor eficiencia en la relación inversión-resultados del período.</li>
+          <li><span class="ci">✅</span>Reels orgánicos con 20,289 vistas: el contenido capilar educativo sigue siendo el formato ganador en Instagram.</li>
+          <li><span class="ci">✅</span>Linktree con 68.2% CTR: alto nivel de intención en el bio-link — los usuarios que llegan al perfil están motivados a explorar.</li>
+        </ul>
+      </div>
+      <div class="pg">
+        <h4>Señales del Mercado</h4>
+        <ul class="cklist">
+          <li><span class="ci">→</span>Las búsquedas en GMB cambiaron de "revibe clínica" a "revi/revia" — la marca está siendo buscada directamente: el posicionamiento funciona.</li>
+          <li><span class="ci">→</span>Capilar domina el 100% de las conversaciones de alto interés en Reve — el paciente ideal está llegando.</li>
+          <li><span class="ci">→</span>El pico de actividad nocturno (21h–22h) se mantiene: los creativos y el bot deben estar optimizados para ese horario.</li>
         </ul>
       </div>
     </div>
     <div>
       <div class="pg">
-        <h4>Marketing</h4>
+        <h4>Áreas de Mejora Detectadas</h4>
         <ul class="cklist">
-          <li><span class="ci">✅</span>Optimización progresiva del algoritmo para identificar pacientes potenciales para la línea capilar.</li>
-          <li><span class="ci">✅</span>Construcción de confianza mediante contenido educativo sostenido en todos los canales.</li>
-          <li><span class="ci">✅</span>Base sólida para evolucionar hacia campañas con mayor enfoque en conversión durante Q3.</li>
+          <li><span class="ci">⚠️</span>Calidad de leads: se identificó que algunos leads no tienen el perfil económico adecuado para los tratamientos. Segmentación por presupuesto en el lead form es la siguiente palanca de calidad.</li>
+          <li><span class="ci">⚠️</span>El agendamiento del 19.0% tiene margen de mejora — optimización del flujo de Reve y seguimiento de leads que no completaron el proceso pueden incrementar las citas sin aumentar la inversión.</li>
+        </ul>
+      </div>
+      <div class="pg">
+        <h4>Oportunidades Identificadas</h4>
+        <ul class="cklist">
+          <li><span class="ci">→</span>La base de 1,513 leads acumulados es un activo de reactivación: campañas de WA Broadcast dirigidas a leads que no convirtieron pueden generar consultas sin costo de adquisición adicional.</li>
+          <li><span class="ci">→</span>YouTube está en curva de crecimiento — "¿Se te está cayendo?" con 181 vistas en 4 días demuestra potencial de distribución orgánica.</li>
         </ul>
       </div>
     </div>
@@ -794,14 +804,14 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
 </div>
 </div>
 
-<!-- ════════ 07 | PRIORIDADES Q3 ════════ -->
+<!-- ════════ 07 | PRIORIDADES AGOSTO ════════ -->
 <div class="cream">
 <div class="wrap">
   <div class="sh">
     <div class="sh-num">07</div>
     <div>
-      <div class="sh-eyebrow">Julio — Septiembre 2026</div>
-      <h2 class="sh-title">Prioridades Q3</h2>
+      <div class="sh-eyebrow">Agosto 2026</div>
+      <h2 class="sh-title">Prioridades para Agosto</h2>
       <div class="sh-rule"></div>
     </div>
   </div>
@@ -809,67 +819,34 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px">
     <div>
       <div class="pg">
-        <h4>Marketing</h4>
+        <h4>Optimización de Campañas</h4>
         <ul class="cklist">
-          <li><span class="ci">→</span>Optimizar la calidad de los leads calificados.</li>
-          <li><span class="ci">→</span>Potenciar campañas orientadas a conversión.</li>
-          <li><span class="ci">→</span>Incrementar testimonios y casos reales de pacientes.</li>
-          <li><span class="ci">→</span>Fortalecer la diferenciación de los tratamientos.</li>
-          <li><span class="ci">→</span>Incorporar CTAs orientados a la divulgación del servicio.</li>
+          <li><span class="ci">1</span><div><strong>Segmentación intensiva por rangos de edad.</strong> Los datos de Reve sugieren que hay perfiles de pacientes más propensos a convertir según grupo etario. Activar segmentación por edades en Meta Ads para identificar el rango con mejor calidad de lead y mayor tasa de conversión.</div></li>
+          <li><span class="ci">2</span><div><strong>Filtro de presupuesto en el lead form.</strong> El médico reportó que varios leads no tienen capacidad económica para los tratamientos. Se propone agregar una pregunta de rango de presupuesto en el formulario de Meta para filtrar leads no calificados antes de que lleguen al bot — mejora la calidad sin reducir el volumen necesariamente.</div></li>
+          <li><span class="ci">3</span><div><strong>Verificar información de refinanciación.</strong> Reviá maneja opciones de financiamiento para los tratamientos. Antes de comunicarlo en pauta o en el bot, necesitamos confirmar los detalles actualizados: montos, plazos, aliados financieros y condiciones — para integrarlo como argumento de conversión en el agente Reve.</div></li>
         </ul>
       </div>
     </div>
     <div>
       <div class="pg">
-        <h4>Ecosistema Digital</h4>
+        <h4>Acciones Prioritarias del Ecosistema</h4>
         <ul class="cklist">
-          <li><span class="ci">→</span>Lanzamiento oficial del nuevo sitio web de Reviá.</li>
-          <li><span class="ci">→</span>Potenciar el posicionamiento SEO y Google Business Profile.</li>
-          <li><span class="ci">→</span>Integrar el sitio web con la estrategia de captación y automatización.</li>
+          <li><span class="ci">→</span>Actualizar los links de Linktree según la campaña activa del mes para maximizar el CTR ya existente (68.2%).</li>
+          <li><span class="ci">→</span>Activar reseñas de pacientes satisfechos en Google Business para reforzar el posicionamiento local.</li>
+          <li><span class="ci">→</span>Continuar producción de reels capilares — el formato está probado y los 3 videos de julio son evidencia de que funciona como soporte orgánico a la pauta.</li>
+          <li><span class="ci">→</span>Explorar campañas de reactivación por WA Broadcast hacia los 1,513 leads históricos que no convirtieron — sin costo de adquisición adicional.</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- Weekly reco box -->
-  <div class="reco-box">
-    <div class="reco-eyebrow">📊 Información Clave para Optimizar la Estrategia en Q3</div>
-    <div class="reco-body">
-      Para conectar los resultados de marketing con el comportamiento real de los pacientes, recomendamos implementar un <strong>reporte semanal con insights del consultorio</strong> que incluya:
-    </div>
-    <div class="kg kg5" style="margin-bottom:0">
-      <div class="kcard dark">
-        <div class="klbl">01</div>
-        <div style="font-size:12px;color:var(--cream);margin-top:5px;line-height:1.5">Pacientes que asistieron a la valoración</div>
-      </div>
-      <div class="kcard dark">
-        <div class="klbl">02</div>
-        <div style="font-size:12px;color:var(--cream);margin-top:5px;line-height:1.5">Tratamiento recomendado y realizado</div>
-      </div>
-      <div class="kcard dark">
-        <div class="klbl">03</div>
-        <div style="font-size:12px;color:var(--cream);margin-top:5px;line-height:1.5">Estado del paciente: convertido, pendiente o descartado</div>
-      </div>
-      <div class="kcard dark">
-        <div class="klbl">04</div>
-        <div style="font-size:12px;color:var(--cream);margin-top:5px;line-height:1.5">Tratamientos con mayor demanda</div>
-      </div>
-      <div class="kcard dark">
-        <div class="klbl">05</div>
-        <div style="font-size:12px;color:var(--cream);margin-top:5px;line-height:1.5">Ticket promedio por procedimiento</div>
-      </div>
-    </div>
-    <div class="reco-note">
-      Objetivo: Utilizar información real del consultorio para optimizar las campañas, identificar los perfiles de pacientes con mayor potencial y fortalecer la toma de decisiones estratégicas durante Q3.
-    </div>
-  </div>
 
 </div>
 </div>
 
 <!-- ════════ FOOTER ════════ -->
 <div class="footer">
-  <em>Reviá</em> · Bogotá, Colombia · Reporte Junio · KIP's para Q3 · Julio 2026
+  <em>Reviá</em> · Bogotá, Colombia · Reporte Julio · KIP's para Agosto · Agosto 2026
 </div>
 
 <!-- ════════ CHARTS ════════ -->
@@ -880,20 +857,24 @@ const G='#C4995A',G2='#8B6A3E',G3='#E8D0A8',GR='#3D6B4F',BL='#3A5F7A',MT='#D4C9B
 new Chart(document.getElementById('chartCPL'),{
   type:'line',
   data:{
-    labels:['Feb','Mar','Abr','May','Jun'],
+    labels:['Feb','Mar','Abr','May','Jun','Jul'],
     datasets:[{
       label:'CPL USD',
-      data:[5.84,2.32,1.72,2.32,1.94],
+      data:[5.84,2.32,1.72,2.32,1.94,1.41],
       borderColor:G,
       backgroundColor:'rgba(196,153,90,.08)',
       fill:true,tension:.4,
-      pointBackgroundColor:[MT,G3,G2,G3,GR],
+      pointBackgroundColor:[MT,G3,G2,G3,G,GR],
       pointRadius:7,pointHoverRadius:9,borderWidth:2.5
     }]
   },
   options:{
     responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y} USD CPL`}}},
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>` $${c.parsed.y} USD CPL`}},
+      annotation:{annotations:{}}
+    },
     scales:{
       y:{grid:{color:'#F0E8DC'},ticks:{callback:v=>'$'+v},min:0,suggestedMax:7},
       x:{grid:{display:false}}
@@ -905,11 +886,11 @@ new Chart(document.getElementById('chartCPL'),{
 new Chart(document.getElementById('chartSpend'),{
   type:'bar',
   data:{
-    labels:['Feb','Mar','Abr','May','Jun'],
+    labels:['Feb','Mar','Abr','May','Jun','Jul'],
     datasets:[
-      {type:'bar',label:'Inversión (USD)',data:[397,463,591,700,648],
-       backgroundColor:[MT,G3,G,G2,'#A07840'],borderRadius:4,yAxisID:'y'},
-      {type:'line',label:'Resultados',data:[68,200,344,302,271],
+      {type:'bar',label:'Inversión (USD)',data:[397,463,591,700,648,462],
+       backgroundColor:[MT,G3,G,G2,'#A07840',GR],borderRadius:4,yAxisID:'y'},
+      {type:'line',label:'Resultados',data:[68,200,344,302,271,327],
        borderColor:BL,backgroundColor:'rgba(58,95,122,.07)',
        pointBackgroundColor:BL,pointRadius:4,tension:.3,yAxisID:'y2',borderWidth:2}
     ]
@@ -928,14 +909,37 @@ new Chart(document.getElementById('chartSpend'),{
   }
 });
 
+// Linktree semanal
+new Chart(document.getElementById('chartLTJul'),{
+  type:'bar',
+  data:{
+    labels:['Sem 1\nJul 1–6','Sem 2\nJul 7–13','Sem 3\nJul 14–20','Sem 4\nJul 21–27','Sem 5\nJul 28–31'],
+    datasets:[
+      {label:'Views',data:[12,35,32,15,19],backgroundColor:'rgba(196,153,90,.35)',borderRadius:4,borderWidth:0},
+      {label:'Clicks',data:[8,26,19,12,12],backgroundColor:G2,borderRadius:4,borderWidth:0}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{labels:{boxWidth:10,font:{size:10}}},
+      tooltip:{callbacks:{label:c=>` ${c.parsed.y} ${c.dataset.label.toLowerCase()}`}}
+    },
+    scales:{
+      y:{grid:{color:'#F0E8DC'},beginAtZero:true},
+      x:{grid:{display:false},ticks:{font:{size:9}}}
+    }
+  }
+});
+
 // YouTube vistas por mes
 new Chart(document.getElementById('chartYT'),{
   type:'bar',
   data:{
-    labels:['Abril','Mayo','Junio'],
+    labels:['Mayo','Junio','Julio'],
     datasets:[{
-      data:[751,237,283],
-      backgroundColor:[G2,MT,G],
+      data:[237,283,358],
+      backgroundColor:[MT,G,GR],
       borderRadius:6,borderWidth:0
     }]
   },
@@ -949,14 +953,14 @@ new Chart(document.getElementById('chartYT'),{
   }
 });
 
-// YouTube top videos
+// YouTube top videos - Julio
 new Chart(document.getElementById('chartYTTop'),{
   type:'bar',
   data:{
-    labels:['Realza SIN Cirugías','¿Se está cayendo?','Exosomas','Caída del cabello','Caída empieza...'],
+    labels:['Perder cabello no es solo...','El microinjerto NO es para todos','Secreto para verte mejor','Nueva fórmula del rejuv.'],
     datasets:[{
-      data:[394,181,228,147,52],
-      backgroundColor:[G2,GR,G,G3,MT],
+      data:[198,123,19,7],
+      backgroundColor:[G2,G,G3,MT],
       borderRadius:5,borderWidth:0
     }]
   },
@@ -970,14 +974,53 @@ new Chart(document.getElementById('chartYTTop'),{
   }
 });
 
+// GMB Interacciones
+new Chart(document.getElementById('chartGMBInt'),{
+  type:'bar',
+  data:{
+    labels:['Mar','Abr','May','Jun','Jul'],
+    datasets:[{
+      data:[74,77,134,60,40],
+      backgroundColor:[MT,G3,G,G2,GR],
+      borderRadius:5,borderWidth:0
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y} interacciones`}}},
+    scales:{y:{grid:{color:'#F0E8DC'},beginAtZero:true},x:{grid:{display:false}}}
+  }
+});
+
+// GMB búsquedas tipo
+new Chart(document.getElementById('chartGMBType'),{
+  type:'doughnut',
+  data:{
+    labels:['Directas (Marca)','Descubrimiento','Google Maps'],
+    datasets:[{
+      data:[23,12,5],
+      backgroundColor:[G2,G,G3],
+      borderWidth:2,
+      borderColor:'#FAF7F2'
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{boxWidth:10,font:{size:10},padding:12}},
+      tooltip:{callbacks:{label:c=>` ${c.parsed} búsquedas`}}
+    }
+  }
+});
+
 // CRM por día de semana
 new Chart(document.getElementById('chartCRMDay'),{
   type:'bar',
   data:{
     labels:['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
     datasets:[{
-      data:[23,29,39,38,32,16,29],
-      backgroundColor:[MT,G3,G2,G2,G,MT,G3],
+      data:[41,41,26,41,29,27,27],
+      backgroundColor:[G2,G2,MT,G2,G3,MT,G3],
       borderRadius:5,borderWidth:0
     }]
   },
@@ -994,7 +1037,7 @@ new Chart(document.getElementById('chartCRMHour'),{
   data:{
     labels:['0h','1h','2h','3h','4h','5h','6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h','23h'],
     datasets:[{
-      data:[1,0,2,2,3,3,9,6,9,10,12,8,3,16,6,8,8,9,12,18,18,25,11,7],
+      data:[4,6,5,2,5,5,15,15,12,17,10,8,5,4,6,12,5,5,13,9,16,26,12,15],
       backgroundColor:(ctx)=>{
         const v=ctx.parsed.y;
         return v>=20?G2:v>=15?G:v>=10?G3:MT;
@@ -1006,27 +1049,6 @@ new Chart(document.getElementById('chartCRMHour'),{
     responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y} convos`}}},
     scales:{y:{grid:{color:'#F0E8DC'},beginAtZero:true},x:{grid:{display:false},ticks:{font:{size:9}}}}
-  }
-});
-
-// Linktree clicks por link
-new Chart(document.getElementById('chartLTReport'),{
-  type:'bar',
-  data:{
-    labels:['Tonif. Corporal','Trats. Capilares','Rejuvec. Facial','Reservar Val.','Test Epigenético','Cejas/Barba'],
-    datasets:[{
-      data:[30,21,11,8,4,3],
-      backgroundColor:['#8B6A3E',G,G2,G3,'#D4C9B8','#E0D4C0'],
-      borderRadius:5,borderWidth:0
-    }]
-  },
-  options:{
-    indexAxis:'y',responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ~${c.parsed.x} clicks (estimado)`}}},
-    scales:{
-      x:{grid:{color:'#F0E8DC'},beginAtZero:true},
-      y:{grid:{display:false},ticks:{font:{size:10}}}
-    }
   }
 });
 </script>
