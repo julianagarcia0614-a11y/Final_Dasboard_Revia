@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -438,14 +439,9 @@ h1,h2,h3,h4,.num{font-family:'Syne',sans-serif}
         <div class="ct">Linktree — Vistas y Clicks por Semana · Julio 2026</div>
         <div style="height:200px"><canvas id="chartLTJul"></canvas></div>
       </div>
-      <div class="chart-card">
-        <div class="ct">Intención Revelada — Linktree Julio 2026</div>
-        <div style="font-size:12.5px;color:var(--text);line-height:1.65;padding:4px 0">
-          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📊 <strong>68.2% CTR</strong> confirma que quienes visitan el bio-link tienen intención real de interactuar con el contenido de Reviá.</div>
-          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📅 <strong>Semana 2 (Jul 7–13):</strong> pico de actividad con 35 views y 26 clicks — correlaciona con campañas activas de pauta esa semana.</div>
-          <div style="padding:7px 0;border-bottom:1px solid var(--cream2)">📉 <strong>Semana 4 (Jul 21–27):</strong> caída a 15 views — actividad más baja del mes · tendencia natural de fin de mes.</div>
-          <div style="padding:7px 0">🔗 <strong>Oportunidad:</strong> El CTR alto indica que el bio-link es un punto de contacto activo. Actualizar el orden de los links según la campaña mensual activa puede incrementar conversiones directas desde el perfil.</div>
-        </div>
+      <div class="chart-card cream-bg">
+        <div class="ct">Clicks por Link — Julio 2026 (73 total · estimado proporcional)</div>
+        <div style="height:200px"><canvas id="chartLTLinks"></canvas></div>
       </div>
     </div>
   </div>
@@ -927,6 +923,31 @@ new Chart(document.getElementById('chartLTJul'),{
     scales:{
       y:{grid:{color:'#F0E8DC'},beginAtZero:true},
       x:{grid:{display:false},ticks:{font:{size:9}}}
+    }
+  }
+});
+
+// Linktree por link
+new Chart(document.getElementById('chartLTLinks'),{
+  type:'bar',
+  data:{
+    labels:['Tonif. Corporal','Trats. Capilares','Rejuvec. Facial','Dirección Maps','Test Epigenético','Cejas / Barba'],
+    datasets:[{
+      data:[25,24,10,6,4,3],
+      backgroundColor:[G,G2,'#7A5230','#5C3D1E',MT,'#D4C0A0'],
+      borderRadius:4,borderWidth:0
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>` ${c.parsed.x} clicks estimados`}}
+    },
+    scales:{
+      x:{grid:{color:'#F0E8DC'},beginAtZero:true,ticks:{font:{size:10}}},
+      y:{grid:{display:false},ticks:{font:{size:10}}}
     }
   }
 });
